@@ -7,38 +7,30 @@
 # 3. Remember, when you reach 1 bottle left, the word "bottles" becomes singular.
 # 4. Put a blank line between each verse of the song.
 
-
 def the_song():
 
-    bottle_count = 99
-    chorus1 = "bottles of beer on the wall,"
-    chorus2 = "bottles of beer.\n"
-    chorus3 = "Take one down; pass it around.\n"
+	for bottle_count in range(99, 0, -1):
 
-    while bottle_count != 2:
-        print bottle_count, chorus1, bottle_count, chorus2
-        print chorus3
-# is it possible to increment by a negative 1? research whether this works: bottle_count += -1
-        bottle_count = bottle_count - 1
+		chorus1 = "bottles of beer on the wall."
+		chorus2 = "bottles of beer."
+		chorus3 = "Take one down; pass it around."
 
-        print bottle_count, chorus1, "\n"
-        continue
-            
-    if bottle_count == 2:
-        print bottle_count, chorus1, bottle_count, chorus2
-        print chorus3
+		if bottle_count > 2:
+			print bottle_count, chorus1, bottle_count, chorus2
+			print chorus3
+			print bottle_count-1, chorus1, "\n"
 
-        bottle_count = bottle_count - 1
+		elif bottle_count == 2:
+			print bottle_count, chorus1, bottle_count, chorus2
+			print chorus3
+			print bottle_count-1, "bottle of beer on the wall.\n"
 
-        print bottle_count, "bottle of beer on the wall.\n"
-
-    if bottle_count == 1:
-        print bottle_count, "bottle of beer on the wall.", bottle_count, "bottle of beer.\n"
-        print chorus3
-        print "No more bottles of beer on the wall.\n"
-
-    print "No more bottles of beer on the wall. No more bottles of beer.\n"
-    print "Go to the store and buy some more.\n"
-    print "99 bottles of beer on the wall.\n"
+		else:
+			print bottle_count, "bottle of beer on the wall.", bottle_count, "bottle of beer."
+			print chorus3
+			print "No more", chorus1, "\n"
+			print "No more", chorus1, "No more", chorus2
+			print "Go to the store and buy some more."
+			print "99 bottles of beer on the wall.\n"
 
 the_song()
