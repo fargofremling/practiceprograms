@@ -1,13 +1,13 @@
 
-game_moves = [' ',' ',' ', ' ',' ',' ', ' ',' ',' ']
+game_moves = [' ',' ',' ',' ',' ',' ',' ',' ',' ']
 
 def player1_moves(player1_input):
-	
+
 	while True:
 		if player1_input == "tl":
 			game_moves[0] = 'X'
 			break
-	
+
 		elif player1_input == "tm":
 			game_moves[1] = 'X'
 			break
@@ -15,44 +15,44 @@ def player1_moves(player1_input):
 		elif player1_input == "tr":
 			game_moves[2] = 'X'
 			break
-	
+
 		elif player1_input == "ml":
 			game_moves[3] = 'X'
 			break
-	
+
 		elif player1_input == "mm":
 			game_moves[4] = 'X'
 			break
-	
+
 		elif player1_input == "mr":
 			game_moves[5] = 'X'
 			break
-	
+
 		elif player1_input == "bl":
 			game_moves[6] = 'X'
 			break
-	
+
 		elif player1_input == "bm":
 			game_moves[7] = 'X'
 			break
-	
+
 		elif player1_input == "br":
 			game_moves[8] = 'X'
 			break
-			
+
 		else:
-			player1_input = raw_input("That is not a valid entry. Please try a different locations.").lower() 
+			player1_input = raw_input("That is not a valid entry. Please try a different spaces.").lower()
 			continue
-			
+
 	gameboard()
-	
+
 def player2_moves(player2_input):
-	
+
 	while True:
 		if player2_input == "tl":
 			game_moves[0] = 'O'
 			break
-	
+
 		elif player2_input == "tm":
 			game_moves[1] = 'O'
 			break
@@ -60,39 +60,39 @@ def player2_moves(player2_input):
 		elif player2_input == "tr":
 			game_moves[2] = 'O'
 			break
-	
+
 		elif player2_input == "ml":
 			game_moves[3] = 'O'
 			break
-	
+
 		elif player2_input == "mm":
 			game_moves[4] = 'O'
 			break
-	
+
 		elif player2_input == "mr":
 			game_moves[5] = 'O'
 			break
-	
+
 		elif player2_input == "bl":
 			game_moves[6] = 'O'
 			break
-	
+
 		elif player2_input == "bm":
 			game_moves[7] = 'O'
 			break
-	
+
 		elif player2_input == "br":
 			game_moves[8] = 'O'
 			break
-			
+
 		else:
-			player2_input = raw_input("That is not a valid entry. Please try a different locations.").lower() 
+			player2_input = raw_input("That is not a valid entry. Please try a different spaces.").lower()
 			continue
-			
+
 	gameboard()
-	
+
 def gameboard():
-	
+
 	print game_moves[0],"|",game_moves[1], "|", game_moves[2]
 	print "---------"
 	print game_moves[3],"|",game_moves[4], "|", game_moves[5]
@@ -100,6 +100,71 @@ def gameboard():
 	print game_moves[6],"|",game_moves[7], "|", game_moves[8]
 	print "\n"
 
+def player1_wins():
+
+	if game_moves[0] == 'X' and game_moves[1] == 'X' and game_moves[2] == 'X':
+		print "Congratulations, Player 1; you've won!"
+		game = "done"
+		
+	elif game_moves[3] == 'X' and game_moves[4] == 'X' and game_moves[5] == 'X':
+		print "Nice job, Player 1; you've won!"
+		game = "done"
+		
+	elif game_moves[6] == 'X' and game_moves[7] == 'X' and game_moves[8] == 'X':
+		print "Well played, Player 1; you've won!"
+		game = "done"
+		
+	elif game_moves[0] == 'X' and game_moves[3] == 'X' and game_moves[6] == 'X':
+		print "Well done, Player 1; you've won!"
+		game = "done"
+	elif game_moves[1] == 'X' and game_moves[4] == 'X' and game_moves[7] == 'X':
+		print "Good move, Player 1; you've won!"
+		game = "done"
+
+	elif game_moves[2] == 'X' and game_moves[5] == 'X' and game_moves[8] == 'X':
+		print "Rock on, Player 1; you've won!"
+		game = "done"
+		
+	elif game_moves[0] == 'X' and game_moves[4] == 'X' and game_moves[8] == 'X':
+		print "Sweet! You've won, Player 1!"
+		game = "done"
+		
+	elif game_moves[2] == 'X' and game_moves[4] == 'X' and game_moves[6] == 'X':
+		print "Look at you, Player 1; you've won!"
+		game = "done"
+		
+	else:
+		print "Not a win yet.\n"
+# 	winning combinations
+# 	0 1 2
+# 	3 4 5
+# 	6 7 8
+# 	0 3 6
+# 	1 4 7
+# 	2 5 8
+# 	0 4 8
+# 	2 4 6
+
+def player2_wins():
+	if game_moves[0] == 'O' and game_moves[1] == 'O' and game_moves[2] == 'O':
+		print "Congratulations, Player 2; you've won!"
+	elif game_moves[3] == 'O' and game_moves[4] == 'O' and game_moves[5] == 'O':
+		print "Nice job, Player 2; you've won!"
+	elif game_moves[6] == 'O' and game_moves[7] == 'O' and game_moves[8] == 'O':
+		print "Well played, Player 2; you've won!"
+	elif game_moves[0] == 'O' and game_moves[3] == 'O' and game_moves[6] == 'O':
+		print "Well done, Player 2; you've won!"
+	elif game_moves[1] == 'O' and game_moves[4] == 'O' and game_moves[7] == 'O':
+		print "Good move, Player 2; you've won!"
+	elif game_moves[2] == 'O' and game_moves[5] == 'O' and game_moves[8] == 'O':
+		print "Rock on, Player 2; you've won!"
+	elif game_moves[0] == 'O' and game_moves[4] == 'O' and game_moves[8] == 'O':
+		print "Sweet! You've won, Player 2!"
+	elif game_moves[2] == 'O' and game_moves[4] == 'O' and game_moves[6] == 'O':
+		print "Look at you, Player 2; you've won!"
+	else:
+		print "Not a win yet.\n"
+		
 def tictactoe():
 
 	print "Welcome to Tic Tac Toe."
@@ -113,7 +178,7 @@ def tictactoe():
 	print "Bottom Left: BL"
 	print "Bottom Middel: BM"
 	print "Bottom Right: BR\n"
-	
+
 	print "TL|TM|TR"
 	print "---------"
 	print "ML|MM|MR"
@@ -121,68 +186,80 @@ def tictactoe():
 	print "BL|BM|BR"
 	print "\n"
 	gameboard()
-
-	player1_move1 = raw_input("Player 1, where would you like to place your first X? ")
-	player1_moves(player1_input = player1_move1.lower())
+	game = ' '
 	
-	player2_move1 = raw_input("Player 2, where would you like to place your first O? ").lower()
+	while game != "done":
 	
-	if player2_move1 == player1_move1:
-		player2_move1 = raw_input("That space has already been taken. Please select another space. ").lower() 
-		player2_moves(player2_input = player2_move1.lower())		
-	else:
-		 player2_moves(player2_input = player2_move1.lower())
+		player1_move1 = raw_input("Player 1, where would you like to place your first X? ")
+		player1_moves(player1_input = player1_move1.lower())
 
-	player1_move2 = raw_input("Player 1, where would you like to place your second X? ").lower()
+		player2_move1 = raw_input("Player 2, where would you like to place your first O? ").lower()
+
+		if player2_move1 == player1_move1:
+			player2_move1 = raw_input("That space has already been taken. Please select another space. ").lower()
+			player2_moves(player2_input = player2_move1.lower())
+		else:
+			 player2_moves(player2_input = player2_move1.lower())
+
+		player1_move2 = raw_input("Player 1, where would you like to place your second X? ").lower()
+
+		if player1_move2 in (player1_move1, player2_move1):
+			player1_move2 = raw_input("That space has already been taken. Please select another space. ").lower()
+			player1_moves(player1_input = player1_move2.lower())
+		else:
+			player1_moves(player1_input = player1_move2.lower())
+
+		player2_move2 = raw_input("Player 2, where would you like to place your second O? ").lower()
+
+		if player2_move2 in (player1_move1, player2_move1, player1_move2):
+			player2_move2 = raw_input("That space has already been taken. Please select another space. ").lower()
+			player2_moves(player2_input = player2_move2.lower())
+		else:
+			player2_moves(player2_input = player2_move2.lower())
+
+		player1_move3 = raw_input("Player 1, where would you like to place your third X? ").lower()
+
+		if player1_move3 in (player1_move1, player2_move1, player1_move2, player2_move2):
+			player1_move3 = raw_input("That space has already been taken. Please select another space. ").lower()
+			player1_moves(player1_input = player1_move3.lower())
+		else:
+			player1_moves(player1_input = player1_move3.lower())
+		player1_wins()
+
+		player2_move3 = raw_input("Player 2, where would you like to place your third O? ").lower()
+		if player2_move3 in (player1_move1, player2_move1, player1_move2, player2_move2, player1_move3):
+			player2_move3 = raw_input("That space has already been taken. Please select another space. ").lower()
+			player2_moves(player2_input = player2_move3.lower())
+		else:
+			player2_moves(player2_input = player2_move3.lower())
+		player2_wins()
 	
-	if player1_move2 == player1_move1 or player1_move2 == player2_move1:
-		player1_move2 = raw_input("That space has already been taken. Please select another space. ").lower() 
-		player1_moves(player1_input = player1_move2.lower())		
-	else:
-		player1_moves(player1_input = player1_move2.lower())
+		player1_move4 = raw_input("Player 1, where would you like to place your fourth X? ").lower()
+		if player1_move4 in (player1_move1, player2_move1, player1_move2, player2_move2, player1_move3, player2_move3):
+			player1_move4 = raw_input("That space has already been taken. Please select another space. ").lower()
+			player1_moves(player1_input = player1_move4.lower())	
+		else:
+			player1_moves(player1_input = player1_move4.lower())	
+		player1_wins()
 
-	player2_move2 = raw_input("Player 2, where would you like to place your second 0? ").lower()
+		player2_move4 = raw_input("Player 2, where would you like to place your last O? ").lower()
+
+		if player2_move4 in (player1_move1, player2_move1, player1_move2, player2_move2, player1_move3, player2_move3, player1_move4):
+			player2_move4 = raw_input("That space has already been taken. Please select another space. ").lower()
+			player2_moves(player2_input = player2_move4.lower())
+		else:
+			player2_moves(player2_input = player2_move4.lower())	
+		player2_wins()
 	
-	if player2_move2 == player1_move1 or player2_move2 == player2_move1 or player2_move2 == player1_move2:
-		player2_move2 = raw_input("That space has already been taken. Please select another space. ").lower() 
-		player2_moves(player2_input = player2_move2.lower())		
-	else:
-		player2_moves(player2_input = player2_move2.lower())
+		player1_move5 = raw_input("Player 1, where would you like to place your last X? ").lower()
 	
-	player1_move3 = raw_input("Player 1, where would you like to place your third X? ").lower()
-	if player1_move3 == player1_move1 or player1_move3 == player2_move1 or player1_move3 == player1_move2 or player1_move3 == player2_move2:
-		player1_moves(player1_input = player1_move3.lower())
-	else:
-		player1_moves(player1_input = player1_move3.lower())
+		if player1_move5 in (player1_move1, player2_move1, player1_move2, player2_move2, player1_move3, player2_move3, player1_move4, player2_move4):
+			player1_move5 = raw_input("That space has already been taken. Please select another space. ").lower()
+			player1_moves(player1_input = player1_move5.lower())	
+		else:
+			player1_moves(player1_input = player1_move5.lower())	
+		player1_wins()
 	
-	player2_move3 = raw_input("Player 2, where would you like to place your third O? ").lower()
-
-	if player2_move3 ...
-		player2_moves(player2_input = player2_move3.lower())
-	else:
-		player2_moves(player2_input = player2_move3.lower())
-			
-	player1_move4 = raw_input("Player 1, where would you like to place your fourth X? ").lower()
-
-	if player1_move4 ...
-		player1_moves(player1_input = player1_move4.lower())	
-	else:
-		player1_moves(player1_input = player1_move4.lower())	
-	
-	player2_move4 = raw_input("Player 2, where would you like to place your last O? ").lower()
-
-	if player2_move4 ...
-		player2_moves(player2_input = player2_move4.lower())
-	else:
-		player2_moves(player2_input = player2_move4.lower())	
-
-	player1_move5 = raw_input("Player 1, where would you like to place your last X? ").lower()
-	
-	if player1_move5 ...
-		player1_moves(player1_input = player1_move5.lower())	
-	else:
-		player1_moves(player1_input = player1_move5.lower())	
-
 tictactoe()
 
 # if player2_move3 == player1_move1 or player2_move3 == player2_move1 or player2_move3 == player1_move2 or player2_move3 == player2_move2 or player2_move3 == player1_move3:
