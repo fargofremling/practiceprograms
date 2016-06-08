@@ -121,38 +121,100 @@ def tictactoe():
 	gameboard()
 	
 	player2_move1 = raw_input("Player 2, where would you like to place your first O? ").lower()
-	if player2_move1 == player1_move1:
-		player2_move1 = raw_input("That space has already been taken. Please select another space. ").lower() 		
+	while True:	
+		if player2_move1 == player1_move1:
+			player2_move1 = raw_input("That space has already been taken. Please select another space. ").lower() 		
+			continue
+			
+		elif player2_move1 == "tl":
+			game_moves[0] = 'O'
+			break
 
-	elif player2_move1 == "tl":
-		game_moves[0] = 'O'
-
-	elif player2_move1 == "tm":
-		game_moves[1] = 'O'
+		elif player2_move1 == "tm":
+			game_moves[1] = 'O'
+			break
 	
-	elif player2_move1 == "tr":
-		game_moves[2] = 'O'
+		elif player2_move1 == "tr":
+			game_moves[2] = 'O'
+			break
+
+		elif player2_move1 == "ml":
+			game_moves[3] = 'O'
+			break
+
+		elif player2_move1 == "mm":
+			game_moves[4] = 'O'
+			break
+
+		elif player2_move1 == "mr":
+			game_moves[5] = 'O'
+			break
+
+		elif player2_move1 == "bl":
+			game_moves[6] = 'O'
+			break
+
+		elif player2_move1 == "bm":
+			game_moves[7] = 'O'
+			break
+
+		elif player2_move1 == "br":
+			game_moves[8] = 'O'
+			break
+
+		else:
+			player2_move1 = raw_input("That is not a valid entry. Please try a different locations.").lower()
+			continue
+			 
+	gameboard()
+	
+	player1_move2 = raw_input("Player 1, where would you like to place your second X? ").lower()
+	
+	while True:
+		if player1_move2 == player1_move1 or player1_move2 == player2_move1:
+			player1_move2 = raw_input("That space has already been taken. Please select another space. ").lower() 		
+			continue
 		
-	elif player2_move1 == "ml":
-		game_moves[3] = 'O'
+		elif player1_move2 == "tl":
+			game_moves[0] = 'X'
+			break
+
+		elif player1_move2 == "tm":
+			game_moves[1] = 'X'
+			break
+
+		elif player1_move2 == "tr":
+			game_moves[2] = 'X'
+			break
+
+		elif player1_move2 == "ml":
+			game_moves[3] = 'X'
+			break
+
+		elif player1_move2 == "mm":
+			game_moves[4] = 'X'
+			break
+
+		elif player1_move2 == "mr":
+			game_moves[5] = 'X'
+			break
+
+		elif player1_move2 == "bl":
+			game_moves[6] = 'X'
+			break
+
+		elif player1_move2 == "bm":
+			game_moves[7] = 'X'
+			break
+
+		elif player1_move2 == "br":
+			game_moves[8] = 'X'
+			break
 		
-	elif player2_move1 == "mm":
-		game_moves[4] = 'O'
+		else:
+			player1_move2 = raw_input("That is not a valid entry. Please try a different locations.").lower() 
+			continue
 		
-	elif player2_move1 == "mr":
-		game_moves[5] = 'O'
-		
-	elif player2_move1 == "bl":
-		game_moves[6] = 'O'
-		
-	elif player2_move1 == "bm":
-		game_moves[7] = 'O'
-		
-	elif player2_move1 == "br":
-		game_moves[8] = 'O'
-		
-	else:
-		player2_move1 = raw_input("That is not a valid entry. Please try a different locations.").lower() 
 	gameboard()
 				
 tictactoe()
@@ -187,7 +249,7 @@ tictactoe()
 #	TM = game_moves[1]
 #	TR = game_moves[2]
 #	ML = game_moves[3]
-#	C = game_moves[4]
+#	MM = game_moves[4]
 #	MR = game_moves[5]
 #	BL = game_moves[6]
 #	BM = game_moves[7]
