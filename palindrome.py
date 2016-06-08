@@ -3,7 +3,7 @@ print "A palindrome is a word, phrase, or sequence that reads the same backward 
 
 def palindrome():
 
-    while True:
+   while True:
         user_input = raw_input("What word would you like to test? ")
 
         palindrome_test = user_input.lower()
