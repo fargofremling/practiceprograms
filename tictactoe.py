@@ -244,7 +244,6 @@ def tictactoe():
 		else:
 			player1_moves(player1_input = player1_move3.lower())
 			player1_wins()
-			print isWinner
 		if isWinner:
 			break
 # 		else:
@@ -256,6 +255,8 @@ def tictactoe():
 		else:
 			player2_moves(player2_input = player2_move3.lower())
 			player2_wins()
+		if isWinner:
+			break
 	
 		player1_move4 = raw_input("Player 1, where would you like to place your fourth X? ").lower()
 		while player1_move4 in (player1_move1, player2_move1, player1_move2, player2_move2, player1_move3, player2_move3):
@@ -263,7 +264,9 @@ def tictactoe():
 		else:
 			player1_moves(player1_input = player1_move4.lower())	
 			player1_wins()
-
+		if isWinner:
+			break
+			
 		player2_move4 = raw_input("Player 2, where would you like to place your last O? ").lower()
 
 		while player2_move4 in (player1_move1, player2_move1, player1_move2, player2_move2, player1_move3, player2_move3, player1_move4):
@@ -271,7 +274,9 @@ def tictactoe():
 		else:
 			player2_moves(player2_input = player2_move4.lower())	
 			player2_wins()
-	
+		if isWinner:
+			break
+			
 		player1_move5 = raw_input("Player 1, where would you like to place your last X? ").lower()
 	
 		while player1_move5 in (player1_move1, player2_move1, player1_move2, player2_move2, player1_move3, player2_move3, player1_move4, player2_move4):
@@ -279,7 +284,8 @@ def tictactoe():
 		else:
 			player1_moves(player1_input = player1_move5.lower())	
 			player1_wins()
-
+		if isWinner:
+			break
 		
 		# 
 # 	else:
