@@ -1,7 +1,8 @@
 
 game_moves = [' ',' ',' ',' ',' ',' ',' ',' ',' ']
 
-winner = ' '
+winner = False
+isWinner = False
 
 def player1_moves(player1_input):
 
@@ -103,42 +104,43 @@ def gameboard():
 	print "\n"
 
 def player1_wins():
-	global winner
+	global isWinner
 	
 	if game_moves[0] == 'X' and game_moves[1] == 'X' and game_moves[2] == 'X':
 		print "Congratulations, Player 1; you've won!"
-		winner = True
+		isWinner = True
 	
 	elif game_moves[3] == 'X' and game_moves[4] == 'X' and game_moves[5] == 'X':
 		print "Nice job, Player 1; you've won!"
-		winner = True
+		isWinner = True
 	
 	elif game_moves[6] == 'X' and game_moves[7] == 'X' and game_moves[8] == 'X':
 		print "Well played, Player 1; you've won!"			
-		winner = True
+		isWinner = True
 	
 	elif game_moves[0] == 'X' and game_moves[3] == 'X' and game_moves[6] == 'X':
 		print "Well done, Player 1; you've won!"
-		winner = True
+		isWinner = True
 
 	elif game_moves[1] == 'X' and game_moves[4] == 'X' and game_moves[7] == 'X':
 		print "Good move, Player 1; you've won!"
-		winner = True
+		isWinner = True
 
 	elif game_moves[2] == 'X' and game_moves[5] == 'X' and game_moves[8] == 'X':
 		print "Rock on, Player 1; you've won!"
-		winner = True
-	
+		isWinner = True
+		
 	elif game_moves[0] == 'X' and game_moves[4] == 'X' and game_moves[8] == 'X':
 		print "Sweet! You've won, Player 1!"
-		winner = True
-	
+		isWinner = True
+			
 	elif game_moves[2] == 'X' and game_moves[4] == 'X' and game_moves[6] == 'X':
 		print "Look at you, Player 1; you've won!"
-		winner = True
+		isWinner = True
 		
 	else:
 		print "Not a win yet."
+		
 # 	winner = True
 # 	winning combinations
 # 	0 1 2
@@ -151,22 +153,39 @@ def player1_wins():
 # 	2 4 6
 
 def player2_wins():
+	global isWinner
+
 	if game_moves[0] == 'O' and game_moves[1] == 'O' and game_moves[2] == 'O':
 		print "Congratulations, Player 2; you've won!"
+		isWinner = True
 	elif game_moves[3] == 'O' and game_moves[4] == 'O' and game_moves[5] == 'O':
 		print "Nice job, Player 2; you've won!"
+		isWinner = True
+
 	elif game_moves[6] == 'O' and game_moves[7] == 'O' and game_moves[8] == 'O':
 		print "Well played, Player 2; you've won!"
+		isWinner = True
+
 	elif game_moves[0] == 'O' and game_moves[3] == 'O' and game_moves[6] == 'O':
 		print "Well done, Player 2; you've won!"
+		isWinner = True
+
 	elif game_moves[1] == 'O' and game_moves[4] == 'O' and game_moves[7] == 'O':
 		print "Good move, Player 2; you've won!"
+		isWinner = True
+
 	elif game_moves[2] == 'O' and game_moves[5] == 'O' and game_moves[8] == 'O':
 		print "Rock on, Player 2; you've won!"
+		isWinner = True
+
 	elif game_moves[0] == 'O' and game_moves[4] == 'O' and game_moves[8] == 'O':
 		print "Sweet! You've won, Player 2!"
+		isWinner = True
+
 	elif game_moves[2] == 'O' and game_moves[4] == 'O' and game_moves[6] == 'O':
 		print "Look at you, Player 2; you've won!"
+		isWinner = True
+
 	else:
 		print "Not a win yet.\n"
 		
@@ -192,7 +211,7 @@ def tictactoe():
 	print "\n"
 	gameboard()
 	
-	while winner is ' ':
+	while True:
 	
 		player1_move1 = raw_input("Player 1, where would you like to place your first X? ")
 		player1_moves(player1_input = player1_move1.lower())
@@ -224,21 +243,26 @@ def tictactoe():
 			player1_move3 = raw_input("That space has already been taken. Please select another space. ").lower()
 		else:
 			player1_moves(player1_input = player1_move3.lower())
-		player1_wins()
+			player1_wins()
+			print isWinner
+		if isWinner:
+			break
+# 		else:
+# 			continue
 
 		player2_move3 = raw_input("Player 2, where would you like to place your third O? ").lower()
 		while player2_move3 in (player1_move1, player2_move1, player1_move2, player2_move2, player1_move3):
 			player2_move3 = raw_input("That space has already been taken. Please select another space. ").lower()
 		else:
 			player2_moves(player2_input = player2_move3.lower())
-		player2_wins()
+			player2_wins()
 	
 		player1_move4 = raw_input("Player 1, where would you like to place your fourth X? ").lower()
 		while player1_move4 in (player1_move1, player2_move1, player1_move2, player2_move2, player1_move3, player2_move3):
 			player1_move4 = raw_input("That space has already been taken. Please select another space. ").lower()
 		else:
 			player1_moves(player1_input = player1_move4.lower())	
-		player1_wins()
+			player1_wins()
 
 		player2_move4 = raw_input("Player 2, where would you like to place your last O? ").lower()
 
@@ -246,7 +270,7 @@ def tictactoe():
 			player2_move4 = raw_input("That space has already been taken. Please select another space. ").lower()
 		else:
 			player2_moves(player2_input = player2_move4.lower())	
-		player2_wins()
+			player2_wins()
 	
 		player1_move5 = raw_input("Player 1, where would you like to place your last X? ").lower()
 	
@@ -254,8 +278,9 @@ def tictactoe():
 			player1_move5 = raw_input("That space has already been taken. Please select another space. ").lower()
 		else:
 			player1_moves(player1_input = player1_move5.lower())	
-		player1_wins()
+			player1_wins()
 
+		
 		# 
 # 	else:
 # # 		play_again = raw_input("Would you like to play again? Y or N \n")
