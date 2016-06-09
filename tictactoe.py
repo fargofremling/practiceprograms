@@ -199,67 +199,59 @@ def tictactoe():
 
 		player2_move1 = raw_input("Player 2, where would you like to place your first O? ").lower()
 
-		if player2_move1 == player1_move1:
+		while player2_move1 == player1_move1:
 			player2_move1 = raw_input("That space has already been taken. Please select another space. ").lower()
-			player2_moves(player2_input = player2_move1.lower())
 		else:
 			 player2_moves(player2_input = player2_move1.lower())
 
 		player1_move2 = raw_input("Player 1, where would you like to place your second X? ").lower()
 
-		if player1_move2 in (player1_move1, player2_move1):
+		while player1_move2 in (player1_move1, player2_move1):
 			player1_move2 = raw_input("That space has already been taken. Please select another space. ").lower()
-			player1_moves(player1_input = player1_move2.lower())
 		else:
 			player1_moves(player1_input = player1_move2.lower())
 
 		player2_move2 = raw_input("Player 2, where would you like to place your second O? ").lower()
 
-		if player2_move2 in (player1_move1, player2_move1, player1_move2):
+		while player2_move2 in (player1_move1, player2_move1, player1_move2):
 			player2_move2 = raw_input("That space has already been taken. Please select another space. ").lower()
-			player2_moves(player2_input = player2_move2.lower())
 		else:
 			player2_moves(player2_input = player2_move2.lower())
 
 		player1_move3 = raw_input("Player 1, where would you like to place your third X? ").lower()
 
-		if player1_move3 in (player1_move1, player2_move1, player1_move2, player2_move2):
+		while player1_move3 in (player1_move1, player2_move1, player1_move2, player2_move2):
 			player1_move3 = raw_input("That space has already been taken. Please select another space. ").lower()
-			player1_moves(player1_input = player1_move3.lower())
 		else:
 			player1_moves(player1_input = player1_move3.lower())
 		player1_wins()
 
 		player2_move3 = raw_input("Player 2, where would you like to place your third O? ").lower()
-		if player2_move3 in (player1_move1, player2_move1, player1_move2, player2_move2, player1_move3):
+		while player2_move3 in (player1_move1, player2_move1, player1_move2, player2_move2, player1_move3):
 			player2_move3 = raw_input("That space has already been taken. Please select another space. ").lower()
-			player2_moves(player2_input = player2_move3.lower())
 		else:
 			player2_moves(player2_input = player2_move3.lower())
 		player2_wins()
 	
 		player1_move4 = raw_input("Player 1, where would you like to place your fourth X? ").lower()
-		if player1_move4 in (player1_move1, player2_move1, player1_move2, player2_move2, player1_move3, player2_move3):
+		while player1_move4 in (player1_move1, player2_move1, player1_move2, player2_move2, player1_move3, player2_move3):
 			player1_move4 = raw_input("That space has already been taken. Please select another space. ").lower()
-			player1_moves(player1_input = player1_move4.lower())	
 		else:
 			player1_moves(player1_input = player1_move4.lower())	
 		player1_wins()
 
 		player2_move4 = raw_input("Player 2, where would you like to place your last O? ").lower()
 
-		if player2_move4 in (player1_move1, player2_move1, player1_move2, player2_move2, player1_move3, player2_move3, player1_move4):
+		while player2_move4 in (player1_move1, player2_move1, player1_move2, player2_move2, player1_move3, player2_move3, player1_move4):
 			player2_move4 = raw_input("That space has already been taken. Please select another space. ").lower()
-			player2_moves(player2_input = player2_move4.lower())
 		else:
 			player2_moves(player2_input = player2_move4.lower())	
 		player2_wins()
 	
 		player1_move5 = raw_input("Player 1, where would you like to place your last X? ").lower()
 	
-		if player1_move5 in (player1_move1, player2_move1, player1_move2, player2_move2, player1_move3, player2_move3, player1_move4, player2_move4):
+		while player1_move5 in (player1_move1, player2_move1, player1_move2, player2_move2, player1_move3, player2_move3, player1_move4, player2_move4):
 			player1_move5 = raw_input("That space has already been taken. Please select another space. ").lower()
-			player1_moves(player1_input = player1_move5.lower())	
 		else:
 			player1_moves(player1_input = player1_move5.lower())	
 		player1_wins()
