@@ -1,6 +1,8 @@
 
 game_moves = [' ',' ',' ',' ',' ',' ',' ',' ',' ']
 
+winner = ' '
+
 def player1_moves(player1_input):
 
 	while True:
@@ -101,40 +103,43 @@ def gameboard():
 	print "\n"
 
 def player1_wins():
-
+	global winner
+	
 	if game_moves[0] == 'X' and game_moves[1] == 'X' and game_moves[2] == 'X':
 		print "Congratulations, Player 1; you've won!"
-		game = "done"
-		
+		winner = True
+	
 	elif game_moves[3] == 'X' and game_moves[4] == 'X' and game_moves[5] == 'X':
 		print "Nice job, Player 1; you've won!"
-		game = "done"
-		
+		winner = True
+	
 	elif game_moves[6] == 'X' and game_moves[7] == 'X' and game_moves[8] == 'X':
-		print "Well played, Player 1; you've won!"
-		game = "done"
-		
+		print "Well played, Player 1; you've won!"			
+		winner = True
+	
 	elif game_moves[0] == 'X' and game_moves[3] == 'X' and game_moves[6] == 'X':
 		print "Well done, Player 1; you've won!"
-		game = "done"
+		winner = True
+
 	elif game_moves[1] == 'X' and game_moves[4] == 'X' and game_moves[7] == 'X':
 		print "Good move, Player 1; you've won!"
-		game = "done"
+		winner = True
 
 	elif game_moves[2] == 'X' and game_moves[5] == 'X' and game_moves[8] == 'X':
 		print "Rock on, Player 1; you've won!"
-		game = "done"
-		
+		winner = True
+	
 	elif game_moves[0] == 'X' and game_moves[4] == 'X' and game_moves[8] == 'X':
 		print "Sweet! You've won, Player 1!"
-		game = "done"
-		
+		winner = True
+	
 	elif game_moves[2] == 'X' and game_moves[4] == 'X' and game_moves[6] == 'X':
 		print "Look at you, Player 1; you've won!"
-		game = "done"
+		winner = True
 		
 	else:
-		print "Not a win yet.\n"
+		print "Not a win yet."
+# 	winner = True
 # 	winning combinations
 # 	0 1 2
 # 	3 4 5
@@ -186,9 +191,8 @@ def tictactoe():
 	print "BL|BM|BR"
 	print "\n"
 	gameboard()
-	game = ' '
 	
-	while game != "done":
+	while winner is ' ':
 	
 		player1_move1 = raw_input("Player 1, where would you like to place your first X? ")
 		player1_moves(player1_input = player1_move1.lower())
@@ -259,6 +263,17 @@ def tictactoe():
 		else:
 			player1_moves(player1_input = player1_move5.lower())	
 		player1_wins()
+
+		# 
+# 	else:
+# # 		play_again = raw_input("Would you like to play again? Y or N \n")
+# #     
+# # 		if play_again in ["y", "Y", "yes", "YES"]:
+# # 			tictactoe()			
+# #         
+# #         else:
+# #             print "Ciao!"
+#             break
 	
 tictactoe()
 
