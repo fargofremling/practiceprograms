@@ -1,7 +1,6 @@
 
 game_moves = [' ',' ',' ',' ',' ',' ',' ',' ',' ']
 
-winner = False
 isWinner = False
 
 def player1_moves(player1_input):
@@ -141,7 +140,6 @@ def player1_wins():
 	else:
 		print "Not a win yet."
 		
-# 	winner = True
 # 	winning combinations
 # 	0 1 2
 # 	3 4 5
@@ -246,8 +244,6 @@ def tictactoe():
 			player1_wins()
 		if isWinner:
 			break
-# 		else:
-# 			continue
 
 		player2_move3 = raw_input("Player 2, where would you like to place your third O? ").lower()
 		while player2_move3 in (player1_move1, player2_move1, player1_move2, player2_move2, player1_move3):
