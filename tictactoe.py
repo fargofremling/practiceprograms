@@ -43,7 +43,7 @@ def player_wins():
 			print "Rock on; you've won!"
 			isWinner = True
 	
-	if boardstatus['tl'] == 'X' or boardstatus['tl'] == 'O':
+	if boardstatus['br'] == 'X' or boardstatus['br'] == 'O':
 	
 		if boardstatus['bl'] == boardstatus['bm'] and boardstatus['bm'] == boardstatus['br']:
 			print "Well played; you've won!"			
