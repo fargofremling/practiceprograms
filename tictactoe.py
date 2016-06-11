@@ -2,6 +2,8 @@ boardstatus = {'tl':' ', 'tm':' ', 'tr':' ', 'ml':' ', 'mm':' ', 'mr':' ', 'bl':
 
 isWinner = False
 
+player_name = " "
+
 # draws the board
 def gameboard():
 
@@ -52,12 +54,20 @@ def player_wins():
 		elif boardstatus['tr'] == boardstatus['mr'] and boardstatus['mr'] == boardstatus['br']:  
 			print "Look at you, Player 1; you've won!"
 			isWinner = True
-		
-# 	else:
-# 		print "Not a win yet."
-		
-# def validentry(player_move):
+
+# used to determine what moves are valid and available (i.e. not already played on the board)
+def available_moves():
+	# list comprehension
+	return [key for key,value in boardstatus.iteritems() if value == ' '] 
+
+# personalized prompt for Player 1 (X) and Player 2 (O) 
+def prompt_player(player_name, game_marker):
 	
+	string ="{}, where would you like to place your {}? ".format(player_name, game_marker)
+	player_move = raw_input(string).lower()
+	return player_move
+
+# main game function	
 def tictactoe():
 
 	print "Welcome to Tic Tac Toe."
@@ -80,133 +90,36 @@ def tictactoe():
 	print "\n"
 	gameboard()
 	
-	while True:
+	names = ["Player 2", "Player 1"]
+	markers = ["O", "X"]
+	turn_number = 1 
 	
-		player1_move1 = raw_input('Player 1, where would you like to place your first X? ').lower()
-		while player1_move1 not in boardstatus:
-			player1_move1 = raw_input('That is not a valid entry. Please try a different spaces. ').lower()
-		boardstatus[player1_move1] = 'X'
-		gameboard()
+	# since there can only be 9 moves in a tic-tac-toe game
+	while turn_number != 10:
 
-		player2_move1 = raw_input("Player 2, where would you like to place your first O? ").lower()
-		while player2_move1 not in boardstatus or player2_move1 == player1_move1:
-			if player2_move1 not in boardstatus:
-				player2_move1 = raw_input('That is not a valid entry. Please try a different spaces. ').lower()
-				continue
-			elif player2_move1 == player1_move1:
-				player2_move1 = raw_input("That space has already been taken. Please select another space. ").lower()
-				continue
-		else:
-			boardstatus[player2_move1] = 'O'
-		gameboard()
-
-		player1_move2 = raw_input("Player 1, where would you like to place your second X? ").lower()
-		while player1_move2 not in boardstatus or player1_move2 in (player1_move1, player2_move1):
-			if player1_move2 not in boardstatus:
-				player1_move2 = raw_input('That is not a valid entry. Please try a different spaces. ').lower()
-				continue
-			elif player1_move2 in (player1_move1, player2_move1):
-				player1_move2 = raw_input("That space has already been taken. Please select another space. ").lower()
-				continue
-		else:
-			boardstatus[player1_move2] = 'X'
-		gameboard()
+		player_name = names[turn_number % 2]
+		game_marker = markers[turn_number % 2]
 		
-		player2_move2 = raw_input("Player 2, where would you like to place your second O? ").lower()
-		while player2_move2 not in boardstatus or player2_move2 in (player1_move1, player2_move1, player1_move2):
-			if player2_move2 not in boardstatus:
-				player2_move2 = raw_input('That is not a valid entry. Please try a different spaces. ').lower()
-				continue
-			elif player2_move2 in (player1_move1, player2_move1, player1_move2):
-				player2_move2 = raw_input("That space has already been taken. Please select another space. ").lower()
-				continue
-		else:
-			boardstatus[player2_move2] = 'O'
-		gameboard()
+		move = prompt_player(player_name, game_marker)
 		
-		player1_move3 = raw_input("Player 1, where would you like to place your third X? ").lower()
-		while player1_move3 not in boardstatus or player1_move3 in (player1_move1, player2_move1, player1_move2, player2_move2):
-			if player1_move3 not in boardstatus:
-				player1_move3 = raw_input('That is not a valid entry. Please try a different spaces. ').lower()
-				continue
-			elif player1_move3 in (player1_move1, player2_move1, player1_move2, player2_move2):
-				player1_move3 = raw_input("That space has already been taken. Please select another space. ").lower()
-				continue
- 		else:
- 			boardstatus[player1_move3] = 'X'
-		gameboard()
-
-		player_wins()
-		if isWinner:
-			break
-
-		player2_move3 = raw_input("Player 2, where would you like to place your third O? ").lower()
-		while player2_move3 not in boardstatus or player2_move3 in (player1_move1, player2_move1, player1_move2, player2_move2, player1_move3):
-			if player2_move3 not in boardstatus:
-				player2_move3 = raw_input('That is not a valid entry. Please try a different spaces. ').lower()
-				continue
-			elif player2_move3 in (player1_move1, player2_move1, player1_move2, player2_move2, player1_move3):
-				player2_move3 = raw_input("That space has already been taken. Please select another space. ").lower()
-				continue
-		else:
-			boardstatus[player2_move3] = 'O'
-		gameboard()
-
-		player_wins()
-		if isWinner:
-			break
-	
-		player1_move4 = raw_input("Player 1, where would you like to place your fourth X? ").lower()
-		while player1_move4 not in boardstatus or player1_move4 in (player1_move1, player2_move1, player1_move2, player2_move2, player1_move3, player2_move3):
-			if player1_move4 not in boardstatus:
-				player1_move4 = raw_input('That is not a valid entry. Please try a different spaces. ').lower()
-				continue
-			elif player1_move4 in (player1_move1, player2_move1, player1_move2, player2_move2, player1_move3, player2_move3):
-				player1_move4 = raw_input("That space has already been taken. Please select another space. ").lower()
-				continue
-		else:
-			boardstatus[player1_move4] = 'X'
-		gameboard()
-		
-		player_wins()
-		if isWinner:
-			break
+		while move not in available_moves():
+			move = raw_input('That is not a valid entry. Please try a different spaces. ').lower()
 			
-		player2_move4 = raw_input("Player 2, where would you like to place your last O? ").lower()
-		while player2_move4 not in boardstatus or player2_move4 in (player1_move1, player2_move1, player1_move2, player2_move2, player1_move3, player2_move3, player1_move4):
-			if player2_move4 not in boardstatus:
-				player2_move4 = raw_input('That is not a valid entry. Please try a different spaces. ').lower()
-				continue
-			elif player2_move4 in (player1_move1, player2_move1, player1_move2, player2_move2, player1_move3, player2_move3, player1_move4):
-				player2_move4 = raw_input("That space has already been taken. Please select another space. ").lower()
-				continue
-		else:
-			boardstatus[player2_move4] = 'O'
+		
+		boardstatus[move] = 'X' if turn_number % 2 else 'O'
+		
 		gameboard()
 		
 		player_wins()
 		if isWinner:
 			break
-			
-		player1_move5 = raw_input("Player 1, where would you like to place your last X? ").lower()
-		while player1_move5 not in boardstatus or player1_move5 in (player1_move1, player2_move1, player1_move2, player2_move2, player1_move3, player2_move3, player1_move4, player2_move4):
-			if player1_move5 not in boardstatus:
-				player1_move5 = raw_input('That is not a valid entry. Please try a different spaces. ').lower()
-				continue
-			elif player1_move5 in (player1_move1, player2_move1, player1_move2, player2_move2, player1_move3, player2_move3, player1_move4, player2_move4):
-				player1_move5 = raw_input("That space has already been taken. Please select another space. ").lower()
-				continue
-		else:
-			boardstatus[player1_move5] = 'X'
-		gameboard()
 		
-		player_wins()
-		if isWinner:
-			break
-		else:
-			print "Looks like the cat won this game. Better luck next time!"
-			break
-# 		 
+		turn_number += 1		
+
+	if turn_number == 10:	
+		print "Looks like the cat won this game. Better luck next time!"
+
+# want to work in a prompt to ask "play again?"		 
 # 	else:
 # 		play_again = raw_input("Would you like to play again? Y or N \n")
 # 
