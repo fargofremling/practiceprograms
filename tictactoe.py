@@ -31,8 +31,8 @@ def player_wins():
 			
 		elif boardstatus['tr'] == boardstatus['mm'] and boardstatus['mm'] == boardstatus['bl']: 
 			print "Good move; you've won!"
-			
 			isWinner = True
+			
 		elif boardstatus['tm'] == boardstatus['mm'] and boardstatus['mm'] == boardstatus['bm']:  
 			print "Sweet! You've won!"
 			isWinner = True
@@ -69,19 +69,27 @@ def prompt_player(player_name, game_marker):
 	player_move = raw_input(string).lower()
 	return player_move
 
-# main game function
-
+# asks the player(s) if they want to play another game
 def play_again():
-
-	another_game = raw_input("Would you like to play again? Y or N \n").lower
+	global yes_again
+	
+	another_game = raw_input("Would you like to play again? Y or N \n").lower()
 	if another_game in ["y", "yes"]:
-		yes_again == True
+		yes_again = True
 
-# def clear_board():
-# 	return boardstatus = {'tl':' ', 'tm':' ', 'tr':' ', 'ml':' ', 'mm':' ', 'mr':' ', 'bl':' ', 'bm':' ', 'br':' '}
-		
+# clears the board for another game
+def clear_board():
+	global boardstatus
+	boardstatus = {'tl':' ', 'tm':' ', 'tr':' ', 'ml':' ', 'mm':' ', 'mr':' ', 'bl':' ', 'bm':' ', 'br':' '}
+
+# main game function		
 def tictactoe():
 
+	global isWinner
+	names = ["Player 2", "Player 1"]
+	markers = ["O", "X"]
+	turn_number = 1 
+	
 	print "Welcome to Tic Tac Toe."
 	print "Your move options are:\n"
 	print "Top Left: TL"
@@ -102,11 +110,6 @@ def tictactoe():
 	print "\n"
 	gameboard()
 	
-	names = ["Player 2", "Player 1"]
-	markers = ["O", "X"]
-	turn_number = 1 
-	
-	# since there can only be 9 moves in a tic-tac-toe game
 	while True:
 
 		player_name = names[turn_number % 2]
@@ -126,22 +129,27 @@ def tictactoe():
 		if isWinner:
 			play_again()
 			if yes_again:
-				turn_number == 1
-				boardstatus[values] = ' '
-				continue
-# 			else:
-# 				print "Ciao"
-# 				break
+				turn_number = 0
+				clear_board()
+				gameboard()
+				isWinner = False
+				
+			else:
+				print "Ciao"
+				break
 		
 		turn_number += 1		
 		
+		# since there can only be 9 moves in a tic-tac-toe game
 		if turn_number == 10:
 			print "Looks like the cat won this game. Better luck next time!"
 			play_again()
 			if yes_again:
-				turn_number == 1
-				boardstatus[values] = ' '
-				continue
+				turn_number = 0
+				clear_board()
+				gameboard()
+				isWinner = False
+				
 			else:
 				print "Ciao"
 				break
