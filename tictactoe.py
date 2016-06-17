@@ -2,6 +2,8 @@ boardstatus = {'tl':' ', 'tm':' ', 'tr':' ', 'ml':' ', 'mm':' ', 'mr':' ', 'bl':
 
 isWinner = False
 
+yes_again = False
+
 player_name = " "
 
 # draws the board
@@ -67,7 +69,17 @@ def prompt_player(player_name, game_marker):
 	player_move = raw_input(string).lower()
 	return player_move
 
-# main game function	
+# main game function
+
+def play_again():
+
+	another_game = raw_input("Would you like to play again? Y or N \n").lower
+	if another_game in ["y", "yes"]:
+		yes_again == True
+
+# def clear_board():
+# 	return boardstatus = {'tl':' ', 'tm':' ', 'tr':' ', 'ml':' ', 'mm':' ', 'mr':' ', 'bl':' ', 'bm':' ', 'br':' '}
+		
 def tictactoe():
 
 	print "Welcome to Tic Tac Toe."
@@ -95,7 +107,7 @@ def tictactoe():
 	turn_number = 1 
 	
 	# since there can only be 9 moves in a tic-tac-toe game
-	while turn_number != 10:
+	while True:
 
 		player_name = names[turn_number % 2]
 		game_marker = markers[turn_number % 2]
@@ -112,21 +124,26 @@ def tictactoe():
 		
 		player_wins()
 		if isWinner:
-			break
+			play_again()
+			if yes_again:
+				turn_number == 1
+				boardstatus[values] = ' '
+				continue
+# 			else:
+# 				print "Ciao"
+# 				break
 		
 		turn_number += 1		
-
-	if turn_number == 10:	
-		print "Looks like the cat won this game. Better luck next time!"
-
-# want to work in a prompt to ask "play again?"		 
-# 	else:
-# 		play_again = raw_input("Would you like to play again? Y or N \n")
-# 
-# 		if play_again in ["y", "Y", "yes", "YES"]:
-# 			tictactoe()			
-# 	
-# 		else:
-# 			print "Ciao!"
+		
+		if turn_number == 10:
+			print "Looks like the cat won this game. Better luck next time!"
+			play_again()
+			if yes_again:
+				turn_number == 1
+				boardstatus[values] = ' '
+				continue
+			else:
+				print "Ciao"
+				break
 			
 tictactoe()
