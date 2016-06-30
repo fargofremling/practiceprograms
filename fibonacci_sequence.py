@@ -13,7 +13,11 @@ print "To what term would you like to see the sequence calculated?"
 
 t = raw_input("> ")
 
+term = 0
+
 def the_sequence():
+
+    global term
 
     f = 0
     print f
@@ -21,15 +25,14 @@ def the_sequence():
     g = 1
     print g
     
-    for _ in range(int(t) - 2):
-    # while loop is required - does not work with for loop
-#     while g in range (1, int(t) - 2):
-#     while f < (int(t) - 2):
+    while term < (int(t) - 2):
     
         f = f + g    
         print f
     
         g = g + f
         print g
+        
+        term += 2
 
 the_sequence()
