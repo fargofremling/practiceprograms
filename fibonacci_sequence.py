@@ -19,20 +19,22 @@ def the_sequence():
 
     global term
 
+    # establishes first term in the sequence
     f = 0
     print f
     
+    # establishes second term in the sequence
     g = 1
-    print g
     
-    while term < (int(t) - 2):
+    while term < (int(t) - 1):
     
-        f = f + g    
-        print f
-    
-        g = g + f
-        print g
-        
-        term += 2
+        if term % 2:
+            f = f + g    
+            print f
+            term += 1
+        else:
+            g = g + f
+            print g
+            term += 1
 
 the_sequence()
