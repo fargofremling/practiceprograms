@@ -28,13 +28,13 @@ def get_weights():
 
 def number_wrappers():
     penny_wrappers = math.ceil(penny_weight / 125)
-    print "You will need," penny_wrappers, "penny wrappers.\n"
+    print "You will need,", penny_wrappers, "penny wrappers.\n"
     nickel_wrappers = math.ceil(nickel_weight / 200)
-    print "You will need," nickel_wrappers, "nickel wrappers.\n"
+    print "You will need,", nickel_wrappers, "nickel wrappers.\n"
     dime_wrappers = math.ceil(dime_weight / 112.4)
-    print "You will need," dime_wrappers, "dime wrappers.\n"
+    print "You will need,", dime_wrappers, "dime wrappers.\n"
     quarter_wrappers = math.ceil(quarter_weight / 226.8)
-    print "You will need," quarter_wrappers, "quarter wrappers.\n"
+    print "You will need,", quarter_wrappers, "quarter wrappers.\n"
 
 def main():
     get_unit()
