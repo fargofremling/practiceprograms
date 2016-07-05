@@ -15,33 +15,32 @@
 
 # 100g = 0.22lbs
 import math
-
-def get_weight():
-    print "Please enter the total weight for each of the following coins.\n"
-    penny_weight = raw_input("Pennies:\n> ")
-    nickel_weight = raw_input("Nickels:\n> ")
-    dime_weight = raw_input("Dimes:\n> ")
-    quarter_weight = raw_input("Quarters:\n> ")
-
+    
 def get_unit():
 
     print "Would you like to use grams or pounds as your weight unit?"
     weight_type = raw_input("> ").lower
-    get_weight()
 #     if weight_type in [gram, grams, g]:
 #         return grams
 #     elif weight_type in [pound, pounds, lb, lbs]:
 #         return pounds
 
-
-
-def number_wrappers():
+def number_wrappers():#, nickel_weight, dime_weight, quarter_weight):
+    "Please enter the total weight for each of the following coins.\n"
+    
+    penny_weight = raw_input("Pennies:\n> ")
     penny_wrappers = math.ceil(int(penny_weight) / 125)
     print "You will need,", penny_wrappers, "penny wrappers.\n"
+    
+    nickel_weight = raw_input("Nickels:\n> ")
     nickel_wrappers = math.ceil(int(nickel_weight) / 200)
     print "You will need,", nickel_wrappers, "nickel wrappers.\n"
+    
+    dime_weight = raw_input("Dimes:\n> ")
     dime_wrappers = math.ceil(int(dime_weight) / 112.4)
     print "You will need,", dime_wrappers, "dime wrappers.\n"
+    
+    quarter_weight = raw_input("Quarters:\n> ")
     quarter_wrappers = math.ceil(int(quarter_weight) / 226.8)
     print "You will need,", quarter_wrappers, "quarter wrappers.\n"
 
