@@ -15,6 +15,8 @@
 
 # 100g = 0.22lbs
 import math
+
+coin_weights = {'pennies': ' ', 'nickels': ' ', 'dimes': ' ', 'quarters': ' '}
     
 def get_unit():
 
@@ -25,27 +27,32 @@ def get_unit():
 #     elif weight_type in [pound, pounds, lb, lbs]:
 #         return pounds
 
-def number_wrappers():#, nickel_weight, dime_weight, quarter_weight):
-    "Please enter the total weight for each of the following coins.\n"
+def get_weights():
+
+    print  "Please enter the total weight for each of the following coins."
+
+    coin_weights['pennies'] = raw_input("\nPennies:\n> ")
+    coin_weights['nickels'] = raw_input("\nNickels:\n> ")
+    coin_weights['dimes'] = raw_input("\nDimes:\n> ")
+    coin_weights['quarters'] = raw_input("\nQuarters:\n> ")
     
-    penny_weight = raw_input("Pennies:\n> ")
-    penny_wrappers = math.ceil(int(penny_weight) / 125)
+def number_wrappers():
+   
+    penny_wrappers = math.ceil(int(coin_weights['pennies']) / 125)
     print "You will need,", penny_wrappers, "penny wrappers.\n"
     
-    nickel_weight = raw_input("Nickels:\n> ")
-    nickel_wrappers = math.ceil(int(nickel_weight) / 200)
+    nickel_wrappers = math.ceil(int(coin_weights['nickels']) / 200)
     print "You will need,", nickel_wrappers, "nickel wrappers.\n"
     
-    dime_weight = raw_input("Dimes:\n> ")
-    dime_wrappers = math.ceil(int(dime_weight) / 112.4)
+    dime_wrappers = math.ceil(int(coin_weights['dimes']) / 112.4)
     print "You will need,", dime_wrappers, "dime wrappers.\n"
-    
-    quarter_weight = raw_input("Quarters:\n> ")
-    quarter_wrappers = math.ceil(int(quarter_weight) / 226.8)
+
+    quarter_wrappers = math.ceil(int(coin_weights['quarters']) / 226.8)
     print "You will need,", quarter_wrappers, "quarter wrappers.\n"
 
 def main():
     get_unit()
+    get_weights()
     number_wrappers()
     
 main()
