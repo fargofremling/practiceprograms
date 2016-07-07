@@ -29,9 +29,9 @@ def magic_eight():
             
             print (random.choice(response))
                     
-            another_question = raw_input("Would you like ask another question? Y or N \n")
+            another_question = raw_input("Would you like ask another question? Y or N \n").lower()
                     
-            if another_question in ["y", "Y", "yes", "YES"]:
+            if another_question in ["y", "yes"]:
                 question_two = raw_input("Ask away! \n> ")
                 continue
                         
