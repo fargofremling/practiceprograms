@@ -1,19 +1,25 @@
-
-day_of_week = raw_input("What day of the week is tomorrow? ").lower()
+day_of_week = raw_input("What day of the week is tomorrow? \n> ").lower()
 
 weekend = [
     "saturday",
-    "sunday",
     "sat",
+    "sunday",
     "sun",
     "s"]
 
-if day_of_week in weekend:
-    sleepin = True
-else:
-    sleepin = False
+weekday = [
+    "monday", "mon", "m",
+    "tuesday", "tues", "tue", "t",
+    "wednesday", "wed", "w",
+    "thursday", "thurs", "thu", 
+    "friday", "fri", "f"]
 
-if sleepin:
-    print "Lucky you! It looks like you're sleeping in tomorrow!"
+
+if day_of_week in weekend:
+    print "Lucky you! You get to sleep in tomorrow!"
+    
+elif day_of_week in weekday:
+     print "Sucks to be you! Looks like you're getting up early tomorrow!"
+     
 else:
-    print "Sucks to be you! Looks like you're getting up early tomorrow!"
+    print "Hmm, not sure what day you meant. Guess it'll be a surprise."

@@ -30,7 +30,6 @@ def get_unit():
 def get_weights():
 
     print  "Please enter the total weight for each of the following coins."
-
     coin_weights['pennies'] = raw_input("\nPennies:\n> ")
     coin_weights['nickels'] = raw_input("\nNickels:\n> ")
     coin_weights['dimes'] = raw_input("\nDimes:\n> ")
