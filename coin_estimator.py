@@ -19,27 +19,45 @@ import math
 coin_weights = {'pennies': ' ', 'nickels': ' ', 'dimes': ' ', 'quarters': ' '}
     
 def get_unit():
-
+    
     print "Would you like to use grams or ounces as your weight unit?"
-    weight_type = raw_input("> ").lower
+#     try:
+    weight_type = raw_input("> ").lower()
+    
     if weight_type in ["gram", "grams", "gr", "g"]:
-        return grams
+        return "grams"
+    
     elif weight_type in ["ounce", "ounces", "oz.", "oz"]:
-        return ounces
+        return "ounces"
+    else:
+        print "That wasn't one of the options, so we'll go with grams."
+        return "grams"
+            
+#     except NameError:
+#         print "Dude, enter a NUMBER!"
 #     else:
 #         Display error message when user puts in an entry not in the above lists. 
 
 def get_weights():
-
-    user_input_weight_type = get_unit()
-
-    print user_input_weight_type
-    print  "Please enter the total weight for each of the following coins."
     
-    coin_weights['pennies'] = raw_input("\nPennies:\n> ")
-    coin_weights['nickels'] = raw_input("\nNickels:\n> ")
-    coin_weights['dimes'] = raw_input("\nDimes:\n> ")
-    coin_weights['quarters'] = raw_input("\nQuarters:\n> ")
+    user_input_weight_type = get_unit()
+    
+    print  "Please enter the total weight for each of the following coins."
+
+    if user_input_weight_type is "grams":
+    
+        coin_weights['pennies'] = int(raw_input("\nPennies:\n> "))
+        coin_weights['nickels'] = raw_input(("\nNickels:\n> "))
+        coin_weights['dimes'] = raw_input(("\nDimes:\n> "))
+        coin_weights['quarters'] = raw_input(("\nQuarters:\n> "))
+        
+    elif user_input_weight_type is "grams"::
+    
+        coin_weights['pennies'] = int(raw_input("\nPennies:\n> ")) * 28.35
+        coin_weights['nickels'] = raw_input(("\nNickels:\n> ")) * 28.35
+        coin_weights['dimes'] = raw_input(("\nDimes:\n> ")) * 28.35
+        coin_weights['quarters'] = raw_input(("\nQuarters:\n> ")) * 28.35
+        
     
 def number_wrappers():
 
@@ -57,9 +75,4 @@ def number_wrappers():
     quarter_wrappers = math.ceil(int(coin_weights['quarters']) / 226.8)
     print "You will need,", quarter_wrappers, "quarter wrappers.\n"
 
-def main():
-
-    
-    number_wrappers()
-    
-main()
+number_wrappers()
