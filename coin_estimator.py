@@ -32,11 +32,6 @@ def get_unit():
     else:
         print "That wasn't one of the options, so we'll go with grams."
         return "grams"
-            
-#     except NameError:
-#         print "Dude, enter a NUMBER!"
-#     else:
-#         Display error message when user puts in an entry not in the above lists. 
 
 def get_weights():
     
@@ -47,32 +42,36 @@ def get_weights():
     if user_input_weight_type is "grams":
     
         coin_weights['pennies'] = int(raw_input("\nPennies:\n> "))
-        coin_weights['nickels'] = raw_input(("\nNickels:\n> "))
-        coin_weights['dimes'] = raw_input(("\nDimes:\n> "))
-        coin_weights['quarters'] = raw_input(("\nQuarters:\n> "))
+        coin_weights['nickels'] = int(raw_input("\nNickels:\n> "))
+        coin_weights['dimes'] = int(raw_input("\nDimes:\n> "))
+        coin_weights['quarters'] = int(raw_input("\nQuarters:\n> "))
         
-    elif user_input_weight_type is "grams"::
+    elif user_input_weight_type is "ounces":
     
         coin_weights['pennies'] = int(raw_input("\nPennies:\n> ")) * 28.35
-        coin_weights['nickels'] = raw_input(("\nNickels:\n> ")) * 28.35
-        coin_weights['dimes'] = raw_input(("\nDimes:\n> ")) * 28.35
-        coin_weights['quarters'] = raw_input(("\nQuarters:\n> ")) * 28.35
+        coin_weights['nickels'] = int(raw_input("\nNickels:\n> ")) * 28.35
+        coin_weights['dimes'] = int(raw_input("\nDimes:\n> ")) * 28.35
+        coin_weights['quarters'] = int(raw_input("\nQuarters:\n> ")) * 28.35
         
     
 def number_wrappers():
 
     get_weights()
 
+    number_of_pennies = int(coin_weights['pennies']) / 2.5
     penny_wrappers = math.ceil(int(coin_weights['pennies']) / 125)
-    print "You will need,", penny_wrappers, "penny wrappers.\n"
+    print "You have", int(number_of_pennies), "pennies and will need,", penny_wrappers, "penny wrappers.\n"
     
+    number_of_nickels = int(coin_weights['nickels']) / 5.0
     nickel_wrappers = math.ceil(int(coin_weights['nickels']) / 200)
-    print "You will need,", nickel_wrappers, "nickel wrappers.\n"
+    print "You have", int(number_of_nickels), "nickles and will need,", nickel_wrappers, "nickel wrappers.\n"
     
+    number_of_dimes = int(coin_weights['dimes']) / 2.268
     dime_wrappers = math.ceil(int(coin_weights['dimes']) / 112.4)
-    print "You will need,", dime_wrappers, "dime wrappers.\n"
+    print "You have", int(number_of_dimes), "dimes and will need,", dime_wrappers, "dime wrappers.\n"
 
+    number_of_quarters = int(coin_weights['quarters']) / 5.67
     quarter_wrappers = math.ceil(int(coin_weights['quarters']) / 226.8)
-    print "You will need,", quarter_wrappers, "quarter wrappers.\n"
+    print "You have", int(number_of_quarters), "quarters and will need,", quarter_wrappers, "quarter wrappers.\n"
 
 number_wrappers()
