@@ -14,6 +14,7 @@
 # Quarter = 5.67g, 40 per roll, $10.00, total weight per roll: 226.8g
 
 # 1oz = 28.35g
+
 import math
 
 coin_weights = {'pennies': ' ', 'nickels': ' ', 'dimes': ' ', 'quarters': ' '}
@@ -21,7 +22,7 @@ coin_weights = {'pennies': ' ', 'nickels': ' ', 'dimes': ' ', 'quarters': ' '}
 def get_unit():
     
     print "Would you like to use grams or ounces as your weight unit?"
-#     try:
+
     weight_type = raw_input("> ").lower()
     
     if weight_type in ["gram", "grams", "gr", "g"]:
@@ -45,15 +46,14 @@ def get_weights():
         coin_weights['nickels'] = int(raw_input("\nNickels:\n> "))
         coin_weights['dimes'] = int(raw_input("\nDimes:\n> "))
         coin_weights['quarters'] = int(raw_input("\nQuarters:\n> "))
-        
+
     elif user_input_weight_type is "ounces":
     
         coin_weights['pennies'] = int(raw_input("\nPennies:\n> ")) * 28.35
         coin_weights['nickels'] = int(raw_input("\nNickels:\n> ")) * 28.35
         coin_weights['dimes'] = int(raw_input("\nDimes:\n> ")) * 28.35
         coin_weights['quarters'] = int(raw_input("\nQuarters:\n> ")) * 28.35
-        
-    
+
 def number_wrappers():
 
     get_weights()
