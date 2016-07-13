@@ -13,12 +13,10 @@ print "To what term would you like to see the sequence calculated?"
 
 t = raw_input("> ")
 
-term = 0
-
 def the_sequence():
 
-    global term
-
+    term = 0
+    
     # establishes first term in the sequence
     f = 0
     print f
