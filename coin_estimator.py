@@ -31,7 +31,7 @@ def get_unit():
     elif weight_type in ["ounce", "ounces", "oz.", "oz"]:
         return "ounces"
     else:
-        print "That wasn't one of the options, so we'll go with grams."
+        print "That wasn't one of the options, so we'll go with grams.\n"
         return "grams"
 
 def get_weights():
@@ -42,18 +42,28 @@ def get_weights():
 
     if user_input_weight_type is "grams":
     
-        coin_weights['pennies'] = int(raw_input("\nPennies:\n> "))
-        coin_weights['nickels'] = int(raw_input("\nNickels:\n> "))
-        coin_weights['dimes'] = int(raw_input("\nDimes:\n> "))
-        coin_weights['quarters'] = int(raw_input("\nQuarters:\n> "))
-
+    	while True:
+			try: 
+				coin_weights['pennies'] = int(raw_input("\nPennies:\n> "))
+				coin_weights['nickels'] = int(raw_input("\nNickels:\n> "))
+				coin_weights['dimes'] = int(raw_input("\nDimes:\n> "))
+				coin_weights['quarters'] = int(raw_input("\nQuarters:\n> "))
+				break
+			except ValueError:
+				print "Ah, weight needs to be a NUMBER! Enter one, please."	
+			
     elif user_input_weight_type is "ounces":
     
-        coin_weights['pennies'] = int(raw_input("\nPennies:\n> ")) * 28.35
-        coin_weights['nickels'] = int(raw_input("\nNickels:\n> ")) * 28.35
-        coin_weights['dimes'] = int(raw_input("\nDimes:\n> ")) * 28.35
-        coin_weights['quarters'] = int(raw_input("\nQuarters:\n> ")) * 28.35
-
+    	while True:
+    		try:
+				coin_weights['pennies'] = int(raw_input("\nPennies:\n> ")) * 28.35
+				coin_weights['nickels'] = int(raw_input("\nNickels:\n> ")) * 28.35
+				coin_weights['dimes'] = int(raw_input("\nDimes:\n> ")) * 28.35
+				coin_weights['quarters'] = int(raw_input("\nQuarters:\n> ")) * 28.35
+				break
+		except ValueError:
+				print "Ah, weight needs to be a NUMBER! Enter one, please."	
+				
 def number_wrappers():
 
     get_weights()
