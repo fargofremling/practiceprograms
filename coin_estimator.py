@@ -43,25 +43,29 @@ def get_weights():
     if user_input_weight_type is "grams":
     
     	while True:
-			try: 
-				coin_weights['pennies'] = int(raw_input("\nPennies:\n> "))
-				coin_weights['nickels'] = int(raw_input("\nNickels:\n> "))
-				coin_weights['dimes'] = int(raw_input("\nDimes:\n> "))
-				coin_weights['quarters'] = int(raw_input("\nQuarters:\n> "))
-				break
+			coin_weights['pennies'] = int(raw_input("\nPennies:\n> "))
+			coin_weights['nickels'] = int(raw_input("\nNickels:\n> "))
+			coin_weights['dimes'] = int(raw_input("\nDimes:\n> "))
+			coin_weights['quarters'] = int(raw_input("\nQuarters:\n> "))
+			
+			try:
+				return int(coin_weights)
+			
 			except ValueError:
-				print "Ah, weight needs to be a NUMBER! Enter one, please."	
+				print "Ah, weight needs to be a NUMBER! Try again using numbers."	
 			
     elif user_input_weight_type is "ounces":
     
     	while True:
-    		try:
-				coin_weights['pennies'] = int(raw_input("\nPennies:\n> ")) * 28.35
-				coin_weights['nickels'] = int(raw_input("\nNickels:\n> ")) * 28.35
-				coin_weights['dimes'] = int(raw_input("\nDimes:\n> ")) * 28.35
-				coin_weights['quarters'] = int(raw_input("\nQuarters:\n> ")) * 28.35
-				break
-		except ValueError:
+			coin_weights['pennies'] = int(raw_input("\nPennies:\n> ")) * 28.35
+			coin_weights['nickels'] = int(raw_input("\nNickels:\n> ")) * 28.35
+			coin_weights['dimes'] = int(raw_input("\nDimes:\n> ")) * 28.35
+			coin_weights['quarters'] = int(raw_input("\nQuarters:\n> ")) * 28.35
+			
+			try:
+				return int(coin_weights)
+			
+			except ValueError:
 				print "Ah, weight needs to be a NUMBER! Enter one, please."	
 				
 def number_wrappers():
