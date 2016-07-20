@@ -1,5 +1,19 @@
 import random
 
+def play_again():
+    play_again = raw_input("Would you like to play again? Y or N \n> ").lower()
+
+    if play_again in ["y", "yes"]:
+        return "yes"
+        
+    elif play_again in ["n", "no"]:
+        print "Until next time!"
+        return "no"
+                    
+    else:
+        print "Hmm, that wasn't Y or N. Let's assume Y."
+        return "yes"
+
 def number_guess():
     while True:
         comp_number = random.randint(1, 10)
@@ -35,18 +49,12 @@ def number_guess():
             except ValueError:
                 print "Dude, enter a NUMBER!"
 
-        play_again = raw_input("Would you like to play again? Y or N \n> ").lower()
+        another_game = play_again()
 
-        if play_again in ["y", "yes"]:
+        if another_game is "yes":
             continue
-        
-        elif play_again in ["n", "no"]:
-            print "Until next time!"
-            break
-                    
         else:
-            print "Hmm, that wasn't Y or N. Let's assume Y."
-            continue
+            break
 
 number_guess()
 
