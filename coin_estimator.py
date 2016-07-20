@@ -14,6 +14,7 @@
 # Quarter = 5.67g, 40 per roll, $10.00, total weight per roll: 226.8g
 
 # 1oz = 28.35g
+
 import math
 
 coin_weights = {'pennies': ' ', 'nickels': ' ', 'dimes': ' ', 'quarters': ' '}
@@ -21,7 +22,7 @@ coin_weights = {'pennies': ' ', 'nickels': ' ', 'dimes': ' ', 'quarters': ' '}
 def get_unit():
     
     print "Would you like to use grams or ounces as your weight unit?"
-#     try:
+
     weight_type = raw_input("> ").lower()
     
     if weight_type in ["gram", "grams", "gr", "g"]:
@@ -30,7 +31,7 @@ def get_unit():
     elif weight_type in ["ounce", "ounces", "oz.", "oz"]:
         return "ounces"
     else:
-        print "That wasn't one of the options, so we'll go with grams."
+        print "That wasn't one of the options, so we'll go with grams.\n"
         return "grams"
 
 def get_weights():
@@ -41,19 +42,32 @@ def get_weights():
 
     if user_input_weight_type is "grams":
     
-        coin_weights['pennies'] = int(raw_input("\nPennies:\n> "))
-        coin_weights['nickels'] = int(raw_input("\nNickels:\n> "))
-        coin_weights['dimes'] = int(raw_input("\nDimes:\n> "))
-        coin_weights['quarters'] = int(raw_input("\nQuarters:\n> "))
-        
+    	while True:
+			coin_weights['pennies'] = int(raw_input("\nPennies:\n> "))
+			coin_weights['nickels'] = int(raw_input("\nNickels:\n> "))
+			coin_weights['dimes'] = int(raw_input("\nDimes:\n> "))
+			coin_weights['quarters'] = int(raw_input("\nQuarters:\n> "))
+			
+			try:
+				return int(coin_weights)
+			
+			except ValueError:
+				print "Ah, weight needs to be a NUMBER! Try again using numbers."	
+			
     elif user_input_weight_type is "ounces":
     
-        coin_weights['pennies'] = int(raw_input("\nPennies:\n> ")) * 28.35
-        coin_weights['nickels'] = int(raw_input("\nNickels:\n> ")) * 28.35
-        coin_weights['dimes'] = int(raw_input("\nDimes:\n> ")) * 28.35
-        coin_weights['quarters'] = int(raw_input("\nQuarters:\n> ")) * 28.35
-        
-    
+    	while True:
+			coin_weights['pennies'] = int(raw_input("\nPennies:\n> ")) * 28.35
+			coin_weights['nickels'] = int(raw_input("\nNickels:\n> ")) * 28.35
+			coin_weights['dimes'] = int(raw_input("\nDimes:\n> ")) * 28.35
+			coin_weights['quarters'] = int(raw_input("\nQuarters:\n> ")) * 28.35
+			
+			try:
+				return int(coin_weights)
+			
+			except ValueError:
+				print "Ah, weight needs to be a NUMBER! Enter one, please."	
+				
 def number_wrappers():
 
     get_weights()
