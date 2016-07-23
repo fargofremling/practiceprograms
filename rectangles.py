@@ -6,6 +6,10 @@
 
 def get_input():
     string = raw_input("What word would you like to put into a rectangel? \n> ")
+    print len(string)
+    
+    
+    print index(string, 0, len(string))
     
     
 get_input()
