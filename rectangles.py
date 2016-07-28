@@ -10,6 +10,13 @@ def get_input():
     
     split = list(string)
     
+    print split 
+    print len(split)
+    
+    print " ".join([str(x) for x in split])
+    print " ".join([str(x) for x in split])[::-1]
+    
+    
     print split[0], " ", split[1], " ", split[2], " ", split[3], " "
     print split[1], "         ", split[2]
     print split[2], "         ",split[1]
