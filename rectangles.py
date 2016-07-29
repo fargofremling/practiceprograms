@@ -6,20 +6,27 @@
 # The input is a string word, a width and a height
 
 def get_input():
+
     string = raw_input("What word would you like to put into a rectangel? \n> ").upper()
     
     split = list(string)
     
-    print split 
-    print len(split)
+    letters = len(split)
     
     print " ".join([str(x) for x in split])
+    
+    X = 1
+    Y = -2
+    
+    for i in xrange(letters - 2):
+    
+        A = split[X]
+        B = split[Y]
+
+        print A, (" " * ((letters * 2) - 5)), B
+        X += 1
+        Y -= 1
+    
     print " ".join([str(x) for x in split])[::-1]
     
-    
-    print split[0], " ", split[1], " ", split[2], " ", split[3], " "
-    print split[1], "         ", split[2]
-    print split[2], "         ",split[1]
-    print split[3], " ", split[2], " ", split[1], " ", split[0], " "
-
 get_input()
