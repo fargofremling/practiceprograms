@@ -11,20 +11,23 @@ def the_sequence():
     # establishes second term in the sequence
     g = 1
     
-    while f < 4000000:
+    while f < 40:
     
-        if f % 2:
-            f = f + g    
-            if f % 2 == 0:
-                evens.append(f)
-            else:
-                continue
+        f = f + g
+        print f
+        
+        if f % 2 == 0:
+            evens.append(f)
+            print evens
+            f += 1
         else:
-            g = g + f
-            if g % 2 == 0:
-                evens.append(g)
-            else:
-                continue
+            continue
+       #  else:
+#             g = g + f
+#             if g % 2 == 0:
+#                 evens.append(g)
+#             else:
+#                 continue
 
 the_sequence()
 
