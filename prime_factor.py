@@ -4,18 +4,27 @@
 # Python program to check if the input number is prime or not
 
 # take input from the user
-num = int(raw_input("Enter a number: "))
+num = 13195
+
+primes = []
 
 # prime numbers are greater than 1
-if num > 1:
-   # check for factors
-   for i in range(2,num):
-       if (num % i) == 0:
-           print num,"is not a prime number"
-           print i,"times",num//i,"is",num
-           break
-   else:
-       print num,"is a prime number"
+for x in xrange(num):
+    if x % 2 != 0:
+        if (num % x) != 0:
+            primes.append(x)
+            x += 1
+        else:
+            x += 1
+       # check for factors
+       # for i in range(2,num):
+#            if (num % i) == 0:
+#                print num,"is not a prime number"
+#                print i,"times",num//i,"is",num
+#                break
+    else:
+       x += 1
 
-else:
-   print num,"is not a prime number"
+print primes
+
+#         if (num % i) == 0:
