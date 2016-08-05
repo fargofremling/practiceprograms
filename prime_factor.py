@@ -2,17 +2,36 @@
 # What is the largest prime factor of the number 600851475143 ?
 
 # Python program to check if the input number is prime or not
-num = 13195
+num = 600851475143
 
 primes = [2]
 
+print num
+
 # prime numbers are greater than 1
-for y in xrange(num):
+for y in xrange(2, num):
+
     if y % 2 != 0:
+        print y
+        
         if (num % y) == 0:
-            if (y % x for x in primes) != 0:
-                primes.append(x)
-            else:
+        
+            not_prime = False
+            
+            for x in primes:
+            
+                if y % x == 0:
+                
+                    not_prime = True
+                    break
+                
+                else:
+                    not_prime = False
+                    
+            if not_prime == False:
+                primes.append(y)
+            
+            else: 
                 continue
         else:
             continue
@@ -21,4 +40,3 @@ for y in xrange(num):
 
 print primes
 
-#         if (num % i) == 0:
