@@ -1,36 +1,44 @@
-# A palindromic number reads the same both ways. The largest palindrome made from the 
-# product of two 2-digit numbers is 9009 = 91 × 99.
-# 
+# A palindromic number reads the same both ways.
+
+# The largest palindrome made from the product of two 2-digit numbers is 9009 = 91 * 99.
+
 # Find the largest palindrome made from the product of two 3-digit numbers.
 
+actual_palindromes = []
 
 def palindrome():
 
-   while True:
-        user_input = raw_input("What word would you like to test? ")
-
-        palindrome_test = user_input.lower()
-
-        reverse = palindrome_test[::-1]
-
-        if palindrome_test == reverse:
-            isPalindrome = True
-
-        else:
-            isPalindrome = False
-
-        if isPalindrome:
-            print "Well, would you look at that;", user_input, "is a palindrome! \n"
-        else:
-            print "Sorry, Charlie,", user_input, "is not a palindrome. \n"
-
-        play_again = raw_input("Would you like to test another word? Y or N \n")
-    
-        if play_again in ["y", "Y", "yes", "YES"]:
-            continue
+    for y in xrange(100, 1000):
         
-        else:
-            print "Ciao!"
-            break
+        for x in xrange(100,1000):
+        
+            product = x * y
+        
+            product_string = str(product) 
+        
+            reverse = product_string[::-1]
+        
+            if product_string == reverse:
+            
+                print y
+            
+                print x
+                
+                print product_string
+                
+                actual_palindromes.append(product)
+            
+                isPalindrome = True
+
+                print "isPalindrome"
+            
+            else:
+                isPalindrome = False
+
+    actual_palindromes.sort()        
+
+    print actual_palindromes
+
+    print actual_palindromes[-1]
 
 palindrome()
