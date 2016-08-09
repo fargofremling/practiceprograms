@@ -4,41 +4,31 @@
 
 # Find the largest palindrome made from the product of two 3-digit numbers.
 
-actual_palindromes = []
 
 def palindrome():
 
-    for y in xrange(100, 1000):
-        
-        for x in xrange(100,1000):
-        
+    for y in range(999, 99, -1):
+    
+        for x in xrange(999, 9, -1):
+            
             product = x * y
-        
+            
             product_string = str(product) 
-        
+            
             reverse = product_string[::-1]
-        
+         
             if product_string == reverse:
-            
+                
                 print y
-            
+                
                 print x
                 
                 print product_string
                 
-                actual_palindromes.append(product)
-            
-                isPalindrome = True
-
-                print "isPalindrome"
+                break
             
             else:
-                isPalindrome = False
-
-    actual_palindromes.sort()        
-
-    print actual_palindromes
-
-    print actual_palindromes[-1]
+                continue
+        break
 
 palindrome()
