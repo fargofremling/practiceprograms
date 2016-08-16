@@ -4,42 +4,54 @@
 
 # Find the largest palindrome made from the product of two 3-digit numbers.
 
+import timeit
+
+start = timeit.default_timer()
+
+actual_palindromes = []
 
 def palindrome():
 
-    a = True
-    
-    product_number = 0
-    
-    y = 997
-
-    x = 999
-
-    while True:
+    for y in xrange(100, 1000):
         
-           
-        product = x * y
-            
-        product_string = str(product) 
-            
-        reverse = product_string[::-1]
+        for x in xrange(100,1000):
         
-        print y, x, product
+            if x >= y: 
+                product = x * y
     
-        if product_string == reverse:
+                product_string = str(product) 
+    
+                reverse = product_string[::-1]
+    
+                if product_string == reverse:
+        
+                    print y
+        
+                    print x
             
-            print product_string
-                
-            return False
+                    print product_string
             
-        elif product_number % 2 != 0:
-            y -= 2
-            x += 1
-            product_number += 1
-            
-        else:
-            x -= 2
-            y += 1
-            product_number += 1
+                    actual_palindromes.append(product)
+        
+                    isPalindrome = True
+
+                    print "isPalindrome"
+        
+                else:
+                    isPalindrome = False
+
+    actual_palindromes.sort()        
+
+    print actual_palindromes
+
+    print actual_palindromes[-1]
 
 palindrome()
+
+stop = timeit.default_timer()
+
+print stop - start 
+
+# 0.587522983551 - without x >= y
+
+# 0.318891048431 - with x >= y
