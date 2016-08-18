@@ -8,9 +8,11 @@ print "Works!"
 n = int(raw_input("What prime number would you like to find?\n> "))
 
 for p in range(2, n+1):
-    for i in range(2, p):
-        if p % i == 0:
+    for x in range(2, p):
+        if p % x == 0:
             break
     else:
         print p,
 print 'Done'
+# This does not find the nth prime number. It instead only goes up to the number
+# entered in the raw input.
