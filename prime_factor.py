@@ -2,7 +2,12 @@
 # What is the largest prime factor of the number 600851475143 ?
 
 # Python program to check if the input number is prime or not
+
 import math
+
+import timeit
+
+start = timeit.default_timer()
 
 num = 600851475143
 
@@ -18,7 +23,6 @@ print square_root
 for y in xrange(3, square_root):
 
     if y % 2 != 0:
-        print y
         
         if (num % y) == 0:
         
@@ -48,3 +52,6 @@ print primes
 
 print primes[-1]
 
+stop = timeit.default_timer()
+
+print stop - start 
