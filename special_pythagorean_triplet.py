@@ -8,6 +8,7 @@
 
 
 def the_function():
+    
     for a in range(1,1000):
     
         for b in range (1, 1000):
@@ -15,18 +16,13 @@ def the_function():
             for c in range (1, 999):
             
                 if (a**2 + b**2 == c**2):
-                    print "Yes"
-                    print a
-                    print b
-                    print c
-                
+                    print "Condition met: ", a,"^2 + ", b,"^2 = ",c,"^2"
+                    
                     if (a + b + c == 1000):
-                        print "YES"
-                        print "Answer?"
-                        print a
-                        print b
-                        print c
-                        print a * b * c
+                        print "a =", a
+                        print "b =", b
+                        print "c =", c
+                        print "Answer:", a * b * c
                         return
 
 the_function()
