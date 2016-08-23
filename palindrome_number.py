@@ -55,3 +55,5 @@ print stop - start
 # 0.587522983551 - without x >= y
 
 # 0.318891048431 - with x >= y
+
+# Answer: 906609

@@ -54,4 +54,6 @@ print primes[-1]
 
 stop = timeit.default_timer()
 
-print stop - start 
+print stop - start
+
+# Answer: 6857 - need to verify on the Project Euler website
