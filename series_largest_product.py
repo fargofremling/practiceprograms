@@ -26,3 +26,15 @@
 # 
 # Find the thirteen adjacent digits in the 1000-digit number that have the greatest 
 # product. What is the value of this product?
+
+# I think I want to drop each digit into an array.
+
+# I want to somehow be able to check for zeros in the array and not multiple any elements
+# for 12 positions before or after the zero. 
+
+# Then sequences of 13 elements in the array that do not contain a zero would simply 
+# be multiplied, e.g. elements [0] - [12] in the array do not contain a zero. 
+
+# That product would be dropped into an array of it's own. Then I would move onto the 
+# next sequence of elements 13 elements that do not contain a zero, find that product
+# and drop into the secondary array and so forth. 
