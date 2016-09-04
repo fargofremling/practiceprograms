@@ -26,3 +26,5 @@ def add(x, y):
 sum = reduce(add, primes)
 
 print sum
+
+# answer: 142913828922
