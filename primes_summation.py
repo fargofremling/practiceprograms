@@ -6,9 +6,9 @@
 
 n = int(raw_input("What prime number would you like to find?\n> "))
 
-primes = []
+primes = [2]
 
-for p in range(2, n+1):
+for p in range(3, n+1, 2):
 
     for x in range(2, p):
     
