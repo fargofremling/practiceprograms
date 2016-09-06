@@ -39,6 +39,8 @@ print the_numbers
 if #code for calling out a generic element == 0, then skip products of + or - 12 elements
  from that particular element == 0
  
+ 0 in the_numbers
+ 
 # Then sequences of 13 elements in the array that do not contain a zero would simply 
 # be multiplied, e.g. elements [0] - [12] in the array do not contain a zero. 
 
