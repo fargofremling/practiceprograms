@@ -50,7 +50,18 @@ print the_numbers.index(0)
 # prints the indices of all the zeros
 print [i for i in range(len(the_numbers)) if the_numbers[i]==0]
 
+def product(x, y):
+    return x * y
 
+sum = reduce(product, evens)
+
+product = 1  # Don't use 0 here, otherwise, you'll get zero 
+             # because anything times zero will be zero.
+list = [1, 2, 3]
+for x in list:
+    product *= x
+    
+    
 # Then sequences of 13 elements in the array that do not contain a zero would simply 
 # be multiplied, e.g. elements [0] - [12] in the array do not contain a zero. 
 
