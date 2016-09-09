@@ -53,15 +53,18 @@ print [i for i in range(len(the_numbers)) if the_numbers[i]==0]
 def product(x, y):
     return x * y
 
-sum = reduce(product, evens)
+sum = reduce(product, the_numbers)
+
+print sum
 
 product = 1  # Don't use 0 here, otherwise, you'll get zero 
              # because anything times zero will be zero.
-list = [1, 2, 3]
-for x in list:
+
+for x in the_numbers[0:12]:
     product *= x
     
-    
+print product
+
 # Then sequences of 13 elements in the array that do not contain a zero would simply 
 # be multiplied, e.g. elements [0] - [12] in the array do not contain a zero. 
 
