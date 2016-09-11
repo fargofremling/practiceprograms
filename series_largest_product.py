@@ -32,41 +32,34 @@ the_numbers = [int(i) for i in str(731671765313306249192251196744265747423553491
 
 print the_numbers
 
-# I want to somehow be able to check for zeros in the array and not multiple any elements
-# for 12 positions before or after the zero. 
-
-#code for calling out a generic element == 0, then skip products of + or - 12 elements
-#  from that particular element == 0
- 
-if 0 in the_numbers:
-    print "here"
-else:
-    print "nope"
-
-# prints the index of the first 0 only
-print the_numbers.index(0)
-
-# prints the indices of all the zeros
-print [i for i in range(len(the_numbers)) if the_numbers[i]==0]
-
 def product(x, y):
     return x * y
 
-sum = reduce(product, the_numbers)
+sums = []
+for n in xrange(0,988):
+    sum = reduce(product, the_numbers[n:n+13])
+    sums.append(sum)
 
-print sum
+sums.sort()
 
-product = 1  # Don't use 0 here, otherwise, you'll get zero 
-             # because anything times zero will be zero.
+print sums
 
-for x in the_numbers[0:12]:
-    product *= x
-    
-print product
+# Answer: 23514624000
 
-# Then sequences of 13 elements in the array that do not contain a zero would simply 
-# be multiplied, e.g. elements [0] - [12] in the array do not contain a zero. 
+# *Code Not Needed*
+ 
+# if 0 in the_numbers:
+#     print "here"
+# else:
+#     print "nope"
 
-# That product would be dropped into an array of it's own. Then I would move onto the 
-# next sequence of elements 13 elements that do not contain a zero, find that product
-# and drop into the secondary array and so forth.  
+## prints the index of the first 0 only
+# print the_numbers.index(0)
+
+## prints the indices of all the zeros
+# print [i for i in range(len(the_numbers)) if the_numbers[i]==0]
+
+# for n in xrange(0,988):
+#     for x in the_numbers[n:n+12]:
+#         product *= x
+#         print product
