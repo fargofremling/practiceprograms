@@ -16,5 +16,7 @@
 # 
 # What is the value of the first triangle number to have over five hundred divisors?
 # 
+# The number to solve this problem must be greater than 500 + all the prime numbers up to
+# 500 (at least). So the minimum starting point is likely at least 550.
 
 # Formula for triangular numbers: b = n(n+1)/2
