@@ -4,6 +4,7 @@
 # Find the sum of all the primes below two million.
 
 import timeit
+import math
 
 start = timeit.default_timer()
 
@@ -16,7 +17,7 @@ for p in range(5, n+1, 2):
 #     p % 3 == 0 or p % 5 == 0 or p % 7 == 0 or p % 11 == 0 or p % 13 == 0:
         continue
     else:
-        for x in range(2, p):
+        for x in range(2, int(math.sqrt(p))):
     
              if p % x == 0:
                  break
