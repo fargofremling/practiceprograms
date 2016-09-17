@@ -25,3 +25,20 @@
 # 
 # What is the greatest product of four adjacent numbers in the same direction 
 # (up, down, left, right, or diagonally) in the 20×20 grid?
+
+# Taking initial code from the series largest product problem.
+the_numbers = [int(i) for i in str()]
+
+print the_numbers
+
+def product(x, y):
+    return x * y
+
+sums = []
+for n in xrange(0,988):
+    sum = reduce(product, the_numbers[n:n+13])
+    sums.append(sum)
+
+sums.sort()
+
+print sums
