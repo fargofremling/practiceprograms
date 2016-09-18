@@ -19,4 +19,19 @@
 # The number to solve this problem must be greater than 500 + all the prime numbers up to
 # 500 (at least). So the minimum starting point is likely at least 550.
 
+
+# def add(x, y):
+#     return x + y
+# 
+# sum = reduce(add, numbers_to_add)
+import math
+
+n = 500
+print n
+# reference: http://stackoverflow.com/questions/6800193/what-is-the-most-efficient-way-of-finding-all-the-factors-of-a-number-in-python
+def factors(n):    
+    return set(reduce(list.__add__, 
+                ([i, n/i] for i in range(1, int(math.sqrt(n)) + 1) if n % i == 0)))
+factors(n)
+
 # Formula for triangular numbers: b = n(n+1)/2
