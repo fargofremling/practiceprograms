@@ -16,5 +16,13 @@ let explicitDouble: Double = 70
 
 let label = "The width is "
 let width = 94
-let widthLabel = label + width
+let widthLabel = label + String(width)
+
+let apples = 3
+let oranges = 5
+let applySummary = "I have \(apples) apples."
+let fruitSummary = "I have \(apples + oranges) pieces of fruit."
+
+let optionalInt: Int? = 9
+let actualInt: Int = optionalInt!
 
