@@ -26,3 +26,28 @@ let fruitSummary = "I have \(apples + oranges) pieces of fruit."
 let optionalInt: Int? = 9
 let actualInt: Int = optionalInt!
 
+var myString = "7"
+var possibleInt = Int(myString)
+print(possibleInt)
+
+myString = "banana"
+var possibleInt = Int(myString)
+print(possibleInt)
+
+var ratingList = ["Poor", "Fine", "Good", "Excelleng"]
+ratingList[1] = "OK"
+ratingList
+
+// Creats an empty array.
+let emptyArray = [String]()
+
+var implicitlyUnwrappedOptionalInt: Int!
+
+let number = 23
+if number < 10 {
+    print("The number is small")
+} else if number > 100 {
+    print("The number is pretty big")
+} else {
+    print("The number is between 10 and 100")
+}
