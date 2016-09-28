@@ -26,12 +26,23 @@
 # sum = reduce(add, numbers_to_add)
 import math
 
-n = 500
+n = 10000000000
+
+factor_list = []
 print n
 # reference: http://stackoverflow.com/questions/6800193/what-is-the-most-efficient-way-of-finding-all-the-factors-of-a-number-in-python
-def factors(n):    
-    return set(reduce(list.__add__, 
-                ([i, n/i] for i in range(1, int(math.sqrt(n)) + 1) if n % i == 0)))
+def factors(n):
+    while len(factor_list) != 100:
+        for x in range (1, n):
+            if n % x == 0:
+                factor_list.append(x)
+                print x
+            
+        
+    # return set(reduce(list.__add__, 
+#                 ([i, n/i] for i in range(1, int(math.sqrt(n)) + 1) if n % i == 0)))
 factors(n)
+
+print factor_list 
 
 # Formula for triangular numbers: b = n(n+1)/2
