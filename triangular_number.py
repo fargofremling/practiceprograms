@@ -26,9 +26,9 @@
 # sum = reduce(add, numbers_to_add)
 import math
 
-b = 1
+b = 3
 
-factor_list = []
+factor_list = [1]
 print b
 # reference: http://stackoverflow.com/questions/6800193/what-is-the-most-efficient-way-of-finding-all-the-factors-of-a-number-in-python
 def factors(b):
@@ -38,7 +38,7 @@ def factors(b):
                 factor_list.append(x)
                 print len(factor_list)
         b = b * (b+1)/2
-        print b
+        print "B =", b
             
         
     # return set(reduce(list.__add__, 
