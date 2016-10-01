@@ -28,24 +28,24 @@ import math
 
 b = 3
 
-factor_list = [1]
 print b
 # reference: http://stackoverflow.com/questions/6800193/what-is-the-most-efficient-way-of-finding-all-the-factors-of-a-number-in-python
 def factors(b):
+    factor_list = [1]
+    c = 2
     while len(factor_list) != 10:
         for x in range (1, b):
             if b % x == 0:
                 factor_list.append(x)
                 print len(factor_list)
-        b = b * (b+1)/2
+        b = c + 1
+        c += 1
         print "B =", b
             
         
     # return set(reduce(list.__add__, 
 #                 ([i, n/i] for i in range(1, int(math.sqrt(n)) + 1) if n % i == 0)))
-factors(b)
-
-print factor_list 
+factors(b) 
 
 # Formula for triangular numbers: b = n(n+1)/2
 # b * 2 = n(n+1)
