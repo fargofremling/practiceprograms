@@ -11,15 +11,21 @@
 # numbers and the square of the sum.
 
 
-# first part
+# first part, squares sum
+
+# creates list to later be reduced()
 squares=[]
 
+# establishes x for 1 to 100
 for x in range(101):
     
+    # finds the square of x for 1 to 100
     y = x**2
     
+    # adds the square to the squares list
     squares.append(y)
 
+# creates the add method for use in the reduce method
 def add(x,y): return x+y
 
 squares_sum = reduce(add, squares)
