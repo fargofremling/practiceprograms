@@ -33,12 +33,14 @@ print b
 def factors(b):
     factor_list = [1]
     c = 2
-    while len(factor_list) != 10:
+    while b < 100000:
+    # while len(factor_list) != 10:
         for x in range (1, b):
             if b % x == 0:
+                print x
                 factor_list.append(x)
-                print len(factor_list)
-        b = c + 1
+#                 print len(factor_list)
+        b = b + c + 1
         c += 1
         print "B =", b
             
