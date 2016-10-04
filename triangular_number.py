@@ -33,16 +33,20 @@ print b
 def factors(b):
     factor_list = [1]
     c = 2
-    while b < 100000:
+    while b < 1000000:
     # while len(factor_list) != 10:
         for x in range (1, b):
             if b % x == 0:
                 print x
                 factor_list.append(x)
-#                 print len(factor_list)
+                print "Length of List", len(factor_list)
+                     if len(factor_list) += 500:
+                        print "Answer!", b
+                        return
         b = b + c + 1
         c += 1
         print "B =", b
+        factor_list = [1]
             
         
     # return set(reduce(list.__add__, 
