@@ -40,13 +40,14 @@ def factors(b):
                 print x
                 factor_list.append(x)
                 print "Length of List", len(factor_list)
-                     if len(factor_list) += 500:
-                        print "Answer!", b
-                        return
+                if len(factor_list) == 50:
+                    print "Answer!", b
+                    return
+        factor_list = [1]
         b = b + c + 1
         c += 1
         print "B =", b
-        factor_list = [1]
+#         factor_list = [1]
             
         
     # return set(reduce(list.__add__, 
