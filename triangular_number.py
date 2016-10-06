@@ -33,8 +33,7 @@ print b
 def factors(b):
     factor_list = [1]
     c = 2
-    while b < 1000000:
-    # while len(factor_list) != 10:
+    while len(factor_list) < 500:
         for x in range (1, b):
             if b % x == 0:
                 print x
