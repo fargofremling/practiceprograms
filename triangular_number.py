@@ -33,13 +33,13 @@ print b
 def factors(b):
     factor_list = [1]
     c = 2
-    while len(factor_list) < 500:
+    while len(factor_list) < 501:
         for x in range (1, b):
             if b % x == 0:
-                print x
+                print "This is a divisor:", x
                 factor_list.append(x)
                 print "Length of List", len(factor_list)
-                if len(factor_list) == 50:
+                if len(factor_list) >= 500:
                     print "Answer!", b
                     return
         factor_list = [1]
