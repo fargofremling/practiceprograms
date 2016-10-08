@@ -29,31 +29,34 @@ import math
 b = 3
 
 print b
-# reference: http://stackoverflow.com/questions/6800193/what-is-the-most-efficient-way-of-finding-all-the-factors-of-a-number-in-python
+
 def factors(b):
     factor_list = [1]
     c = 2
+    
     while len(factor_list) < 501:
-        for x in range (1, b):
+       
+        # only need to find factors up to the square root of the number
+        for x in range (1, int(math.sqrt(b))):
+            
             if b % x == 0:
+                
                 print "This is a divisor:", x
                 factor_list.append(x)
                 print "Length of List", len(factor_list)
-                if len(factor_list) >= 500:
+                
+                # only need factor_list length to 250, because only half of factors
+                # are being calculated.
+                if len(factor_list) >= 250:
                     print "Answer!", b
                     return
+                    
+        # the first of triangular numbers
         factor_list = [1]
         b = b + c + 1
         c += 1
         print "B =", b
-#         factor_list = [1]
-            
-        
-    # return set(reduce(list.__add__, 
-#                 ([i, n/i] for i in range(1, int(math.sqrt(n)) + 1) if n % i == 0)))
 factors(b) 
 
-# Formula for triangular numbers: b = n(n+1)/2
-# b * 2 = n(n+1)
-# 
+# Answer: 76576500
 
