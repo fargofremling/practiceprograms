@@ -12,15 +12,15 @@ def leap_year_check():
             year = int(raw_input("What year would you like to check? \n> "))
     
             if year % 4 != 0:
-                print "Nope, it's not a leap year."
+                print "Nope,", year, "is not a leap year."
                 break
                 
             elif year % 4 == 0 and year % 100 == 0 and year % 400 != 0:
-                print "Nope, it's not a leap year."
+                print "Nope,", year, "is not a leap year."
                 break
             
             else:
-                print "Yep, it's a leap year. Hooray for an extra day!"
+                print "Yep,", year, "is a leap year. Hooray for an extra day!"
                 break
                 
         except ValueError:
