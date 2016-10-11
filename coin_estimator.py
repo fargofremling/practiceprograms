@@ -26,10 +26,10 @@ def get_unit():
 
     weight_type = raw_input("> ").lower()
     
-    if weight_type in ["gram", "grams", "gr", "g"]:
+    if weight_type in ["gram", "grams", "gr.", "gr", "g"]:
         return "grams"
     
-    elif weight_type in ["ounce", "ounces", "oz.", "oz"]:
+    elif weight_type in ["ounce", "ounces", "oz.", "oz", "o"]:
         return "ounces"
     
     else:
@@ -54,7 +54,7 @@ def get_weights():
                 return coin_weights
 
             except ValueError:
-                print "Ah, weight needs to be a NUMBER! Try again using numbers."	
+                print "Ah, weight needs to be a NUMBER! Try again using numbers."
 
     elif user_input_weight_type is "ounces":
     
@@ -75,19 +75,19 @@ def number_wrappers():
     get_weights()
 
     number_of_pennies = coin_weights['pennies'] / 2.5
-    penny_wrappers = math.ceil(int(coin_weights['pennies']) / 125)
+    penny_wrappers = math.ceil(coin_weights['pennies'] / 125)
     print "You have", number_of_pennies, "pennies and will need,", penny_wrappers, "penny wrappers.\n"
     
     number_of_nickels = coin_weights['nickels'] / 5.0
-    nickel_wrappers = math.ceil(int(coin_weights['nickels']) / 200)
+    nickel_wrappers = math.ceil(coin_weights['nickels'] / 200)
     print "You have", number_of_nickels, "nickles and will need,", nickel_wrappers, "nickel wrappers.\n"
     
     number_of_dimes = coin_weights['dimes'] / 2.268
-    dime_wrappers = math.ceil(int(coin_weights['dimes']) / 112.4)
+    dime_wrappers = math.ceil(coin_weights['dimes'] / 112.4)
     print "You have", number_of_dimes, "dimes and will need,", dime_wrappers, "dime wrappers.\n"
 
     number_of_quarters = coin_weights['quarters'] / 5.67
-    quarter_wrappers = math.ceil(int(coin_weights['quarters']) / 226.8)
+    quarter_wrappers = math.ceil(coin_weights['quarters'] / 226.8)
     print "You have", number_of_quarters, "quarters and will need,", quarter_wrappers, "quarter wrappers.\n"
 
 number_wrappers()
