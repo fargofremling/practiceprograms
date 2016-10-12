@@ -75,19 +75,23 @@ def number_wrappers():
     get_weights()
 
     number_of_pennies = coin_weights['pennies'] / 2.5
-    penny_wrappers = math.ceil(coin_weights['pennies'] / 125)
-    print "You have", number_of_pennies, "pennies and will need,", penny_wrappers, "penny wrappers.\n"
+#     penny_wrappers = math.ceil(coin_weights['pennies'] / 125)
+    penny_wrappers = math.ceil(number_of_pennies / 50)
+    print "You have", number_of_pennies, "pennies and will need", penny_wrappers, "penny wrappers.\n"
     
     number_of_nickels = coin_weights['nickels'] / 5.0
-    nickel_wrappers = math.ceil(coin_weights['nickels'] / 200)
-    print "You have", number_of_nickels, "nickles and will need,", nickel_wrappers, "nickel wrappers.\n"
+#     nickel_wrappers = math.ceil(coin_weights['nickels'] / 200)
+    nickel_wrappers = math.ceil(number_of_nickels / 40)
+    print "You have", number_of_nickels, "nickles and will need", nickel_wrappers, "nickel wrappers.\n"
     
     number_of_dimes = coin_weights['dimes'] / 2.268
-    dime_wrappers = math.ceil(coin_weights['dimes'] / 112.4)
-    print "You have", number_of_dimes, "dimes and will need,", dime_wrappers, "dime wrappers.\n"
+#     dime_wrappers = math.ceil(coin_weights['dimes'] / 112.4)
+    dime_wrappers = math.ceil(number_of_dimes / 50)
+    print "You have", number_of_dimes, "dimes and will need", dime_wrappers, "dime wrappers.\n"
 
     number_of_quarters = coin_weights['quarters'] / 5.67
-    quarter_wrappers = math.ceil(coin_weights['quarters'] / 226.8)
-    print "You have", number_of_quarters, "quarters and will need,", quarter_wrappers, "quarter wrappers.\n"
+#     quarter_wrappers = math.ceil(coin_weights['quarters'] / 226.8)
+    quarter_wrappers = math.ceil(number_of_quarters / 40)
+    print "You have", number_of_quarters, "quarters and will need", quarter_wrappers, "quarter wrappers.\n"
 
 number_wrappers()
