@@ -12,13 +12,17 @@
 # How many Sundays fell on the first of the month during the twentieth century (1 Jan 1901 to 31 Dec 2000)?
 
 
-months = [jan: 31, feb: 28, feb_leap: 29, mar: 31, april: 30, may: 31, june: 30, july: 31, aug: 31,
-sept: 30, oct: 31, nov: 30, dec: 31]
+months = {'jan': 31, 'feb': 28, 'feb_leap': 29, 'mar': 31, 'april': 30, 'may': 31, 'june': 30, 'july': 31, 'aug': 31,
+'sept': 30, 'oct': 31, 'nov': 30, 'dec': 31}
 
-year == 1990
+
 
 def counting_sundays():
-    if year % 4 == 0:
-        the leap_year = True
-    
+    year = 1899
+    while year < 2001:
+        year +=1
+        print year
+        if year % 4 == 0:
+            print "Yes, Leap Year."
+#             leap_year = True
 counting_sundays()
