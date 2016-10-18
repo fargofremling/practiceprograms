@@ -25,7 +25,13 @@ def counting_sundays():
     while start_year < end_year:
         start_year +=1
         print start_year
-        if start_year % 4 == 0:
-            print "Yes, Leap Year."
-#             leap_year = True
+        if start_year % 4 != 0:
+            continue
+                
+        elif start_year % 4 == 0 and start_year % 100 == 0 and start_year % 400 != 0:
+            continue
+            
+        else:
+            print "Yep,", start_year, "is a leap year. Hooray for an extra day!"
+
 counting_sundays()
