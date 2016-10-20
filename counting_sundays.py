@@ -19,12 +19,17 @@ months = {'jan': 31, 'feb': 28, 'feb_leap': 29, 'mar': 31, 'april': 30, 'may': 3
 
 def counting_sundays():
 
-    sundays_number == 0
+    sundays_number = 0
 
-    start_year = int(raw_input("What year would you like to start with? \n> ")) - 1
+    start_year = int(raw_input("What year would you like to start with? \n> "))
+    start_month = raw_input("Month? \n> ")
+    # start_day = int(raw_input(("Day? \n> "))
     end_year = int(raw_input("What year would you like to end with? \n> "))
+    end_month = raw_input("Month? \n> ")
+    end_day = int(raw_input("Day? \n> "))
 
-    while start_year < end_year:
+
+    while start_year < endyear:
     
         start_year +=1
         
