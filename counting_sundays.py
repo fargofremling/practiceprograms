@@ -11,12 +11,17 @@
 # A leap year occurs on any year evenly divisible by 4, but not on a century unless it is divisible by 400.
 # How many Sundays fell on the first of the month during the twentieth century (1 Jan 1901 to 31 Dec 2000)?
 
+# https://docs.python.org/2/library/calendar.html#module-calendar
+
+import calendar
+
 months = {'jan': 31, 'feb': 28, 'feb_leap': 29, 'mar': 31, 'april': 30, 'may': 31, 'june': 30, 'july': 31, 'aug': 31,
 'sept': 30, 'oct': 31, 'nov': 30, 'dec': 31}
 
 # normal year is 365 days
 # leap year is 366 days
 
+# sunday_start: 19000107
 def counting_sundays():
 
     sundays_number = 0
