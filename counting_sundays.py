@@ -49,4 +49,7 @@ def counting_sundays():
         else:
             print "Yep,", start_year, "is a leap year. Hooray for an extra day!"
 
+    if day % 7 == 0:
+        isSunday = True
+        sunday_count += 1
 counting_sundays()
