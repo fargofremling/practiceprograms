@@ -22,9 +22,41 @@ months = {'jan': 31, 'feb': 28, 'feb_leap': 29, 'mar': 31, 'april': 30, 'may': 3
 # leap year is 366 days
 
 # sunday_start: 19000107
+
+def dayListBuild():
+
+    sunday_count = 0
+
+    start_year = int(raw_input("What year would you like to start with? \n> "))
+    start_month = raw_input("Month? \n> ")
+    # start_day = int(raw_input(("Day? \n> "))
+    end_year = int(raw_input("What year would you like to end with? \n> "))
+    end_month = raw_input("Month? \n> ")
+    end_day = int(raw_input("Day? \n> "))
+
+    dayListBuild = [[0,0,0]]
+    for year in range(start_year, end_year+1):
+        for month in range(start_month, end_month+1):
+            if month in [4, 6, 9, 11]:
+                day_count = 30
+            elif month is 2:
+                if year % 4 and (not year % 100 or year % 400):
+                        dayRange = 29
+                else:
+                    dayRange = 28
+            else:
+                dayRange = 31
+            for day in range(1, dayRange + 1):
+                dayListBuild.append([year, month, day])
+    return dayListBuild
+
+
+
+
+
 def counting_sundays():
 
-    sundays_number = 0
+    sunday_count = 0
 
     start_year = int(raw_input("What year would you like to start with? \n> "))
     start_month = raw_input("Month? \n> ")
@@ -52,4 +84,5 @@ def counting_sundays():
     if day % 7 == 0:
         isSunday = True
         sunday_count += 1
+    
 counting_sundays()
