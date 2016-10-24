@@ -28,10 +28,10 @@ def dayListBuild():
     sunday_count = 0
 
     start_year = int(raw_input("What year would you like to start with? \n> "))
-    start_month = raw_input("Month? \n> ")
-    # start_day = int(raw_input(("Day? \n> "))
+    start_month = int(raw_input("Month? \n> "))
+    start_day = int(raw_input("Day? \n> "))
     end_year = int(raw_input("What year would you like to end with? \n> "))
-    end_month = raw_input("Month? \n> ")
+    end_month = int(raw_input("Month? \n> "))
     end_day = int(raw_input("Day? \n> "))
 
     dayListBuild = [[0,0,0]]
@@ -39,50 +39,60 @@ def dayListBuild():
         for month in range(start_month, end_month+1):
             if month in [4, 6, 9, 11]:
                 day_count = 30
-            elif month is 2:
-                if year % 4 and (not year % 100 or year % 400):
-                        dayRange = 29
+            elif month == 2:
+                if start_year % 4 != 0:
+                    day_count = 28
+                
+                elif start_year % 4 == 0 and start_year % 100 == 0 and start_year % 400 != 0:
+                    day_count = 28
+            
                 else:
-                    dayRange = 28
+                    print "Yep,", start_year, "is a leap year. Hooray for an extra day!"
+                    day_count = 29
+
             else:
-                dayRange = 31
-            for day in range(1, dayRange + 1):
+                day_count = 31
+                
+            for day in range(1, day_count + 1):
                 dayListBuild.append([year, month, day])
+    
+    print dayListBuild
+    print len(dayListBuild)
     return dayListBuild
 
+dayListBuild()
 
 
-
-
-def counting_sundays():
-
-    sunday_count = 0
-
-    start_year = int(raw_input("What year would you like to start with? \n> "))
-    start_month = raw_input("Month? \n> ")
-    # start_day = int(raw_input(("Day? \n> "))
-    end_year = int(raw_input("What year would you like to end with? \n> "))
-    end_month = raw_input("Month? \n> ")
-    end_day = int(raw_input("Day? \n> "))
-
-
-    while start_year < endyear:
-    
-        start_year +=1
-        
-        print start_year
-        
-        if start_year % 4 != 0:
-            continue
-                
-        elif start_year % 4 == 0 and start_year % 100 == 0 and start_year % 400 != 0:
-            continue
-            
-        else:
-            print "Yep,", start_year, "is a leap year. Hooray for an extra day!"
-
-    if day % 7 == 0:
-        isSunday = True
-        sunday_count += 1
-    
-counting_sundays()
+# 
+# def counting_sundays():
+# 
+#     sunday_count = 0
+# 
+#     start_year = int(raw_input("What year would you like to start with? \n> "))
+#     start_month = raw_input("Month? \n> ")
+#     # start_day = int(raw_input(("Day? \n> "))
+#     end_year = int(raw_input("What year would you like to end with? \n> "))
+#     end_month = raw_input("Month? \n> ")
+#     end_day = int(raw_input("Day? \n> "))
+# 
+# 
+#     while start_year < endyear:
+#     
+#         start_year +=1
+#         
+#         print start_year
+#         
+#         if start_year % 4 != 0:
+#             continue
+#                 
+#         elif start_year % 4 == 0 and start_year % 100 == 0 and start_year % 400 != 0:
+#             continue
+#             
+#         else:
+#             print "Yep,", start_year, "is a leap year. Hooray for an extra day!"
+# 
+#     if day % 7 == 0:
+#         isSunday = True
+#         sunday_count += 1
+#     
+# counting_sundays()
