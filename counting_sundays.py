@@ -57,7 +57,7 @@ def dayListBuild():
                 dayListBuild.append([year, month, day])
     
     print dayListBuild
-    print len(dayListBuild)
+    print len(dayListBuild)/7
     return dayListBuild
 
 dayListBuild()
