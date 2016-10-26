@@ -53,7 +53,7 @@ def dayListBuild():
             else:
                 day_count = 31
                 
-            for day in range(1, day_count + 1):
+            for day in range(start_day, end_day + 1):
                 dayListBuild.append([year, month, day])
     
     print dayListBuild
