@@ -42,19 +42,25 @@ def dayListBuild():
             elif month == 2:
                 if start_year % 4 != 0:
                     day_count = 28
+                    for day in range(start_day, day_count + 1):
+                        dayListBuild.append([year, month, day])
                 
                 elif start_year % 4 == 0 and start_year % 100 == 0 and start_year % 400 != 0:
                     day_count = 28
+                    for day in range(start_day, day_count + 1):
+                        dayListBuild.append([year, month, day])
             
                 else:
                     print "Yep,", start_year, "is a leap year. Hooray for an extra day!"
                     day_count = 29
+                    for day in range(start_day, day_count + 1):
+                        dayListBuild.append([year, month, day])
 
             else:
                 day_count = 31
-                
-            for day in range(start_day, end_day + 1):
-                dayListBuild.append([year, month, day])
+                for day in range(start_day, day_count + 1):
+                    dayListBuild.append([year, month, day])
+
     
     print dayListBuild
     print len(dayListBuild)/7
@@ -96,3 +102,5 @@ dayListBuild()
 #         sunday_count += 1
 #     
 # counting_sundays()
+
+# Answer tried: 5313, 5314, 5315, 3499, 3500, and 3501
