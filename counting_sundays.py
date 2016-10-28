@@ -15,9 +15,6 @@
 
 import calendar
 
-months = {'jan': 31, 'feb': 28, 'feb_leap': 29, 'mar': 31, 'april': 30, 'may': 31, 'june': 30, 'july': 31, 'aug': 31,
-'sept': 30, 'oct': 31, 'nov': 30, 'dec': 31}
-
 # normal year is 365 days
 # leap year is 366 days
 
@@ -35,72 +32,36 @@ def dayListBuild():
     end_day = int(raw_input("Day? \n> "))
 
     dayListBuild = [[0,0,0]]
+    
     for year in range(start_year, end_year+1):
+        
         for month in range(start_month, end_month+1):
+            
+            day_count = 31
+            
             if month in [4, 6, 9, 11]:
                 day_count = 30
-            elif month == 2:
-                if start_year % 4 != 0:
-                    day_count = 28
-                    for day in range(start_day, day_count + 1):
-                        dayListBuild.append([year, month, day])
-                
-                elif start_year % 4 == 0 and start_year % 100 == 0 and start_year % 400 != 0:
-                    day_count = 28
-                    for day in range(start_day, day_count + 1):
-                        dayListBuild.append([year, month, day])
             
+            elif month == 2:
+                if year % 4 != 0:
+                    day_count = 28
+                
+                elif year % 4 == 0 and year % 100 == 0 and year % 400 != 0:
+                    day_count = 28
+
                 else:
-                    print "Yep,", start_year, "is a leap year. Hooray for an extra day!"
+                    print "Yep,", year, "is a leap year. Hooray for an extra day!"
                     day_count = 29
-                    for day in range(start_day, day_count + 1):
-                        dayListBuild.append([year, month, day])
 
-            else:
-                day_count = 31
-                for day in range(start_day, day_count + 1):
-                    dayListBuild.append([year, month, day])
+                
+            for day in range(start_day, day_count + 1):
+                dayListBuild.append([year, month, day])
 
-    
     print dayListBuild
     print len(dayListBuild)/7
-    return dayListBuild
+    
+    base_day = dayListBuild[7][2]
+    print base_day
 
 dayListBuild()
 
-
-# 
-# def counting_sundays():
-# 
-#     sunday_count = 0
-# 
-#     start_year = int(raw_input("What year would you like to start with? \n> "))
-#     start_month = raw_input("Month? \n> ")
-#     # start_day = int(raw_input(("Day? \n> "))
-#     end_year = int(raw_input("What year would you like to end with? \n> "))
-#     end_month = raw_input("Month? \n> ")
-#     end_day = int(raw_input("Day? \n> "))
-# 
-# 
-#     while start_year < endyear:
-#     
-#         start_year +=1
-#         
-#         print start_year
-#         
-#         if start_year % 4 != 0:
-#             continue
-#                 
-#         elif start_year % 4 == 0 and start_year % 100 == 0 and start_year % 400 != 0:
-#             continue
-#             
-#         else:
-#             print "Yep,", start_year, "is a leap year. Hooray for an extra day!"
-# 
-#     if day % 7 == 0:
-#         isSunday = True
-#         sunday_count += 1
-#     
-# counting_sundays()
-
-# Answer tried: 5313, 5314, 5315, 3499, 3500, and 3501
