@@ -56,12 +56,16 @@ def dayListBuild():
                 
             for day in range(start_day, day_count + 1):
                 dayListBuild.append([year, month, day])
+                # Need to figure out how to write this. 
+                if dayListBuild[a] % 7 == 0:
+                    sunday_count += 1
 
     print dayListBuild
     print len(dayListBuild)/7
     
     base_day = dayListBuild[7][2]
     print base_day
+    
 
 dayListBuild()
 
