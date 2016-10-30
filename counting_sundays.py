@@ -31,11 +31,13 @@ def dayListBuild():
     end_month = int(raw_input("Month? \n> "))
     end_day = int(raw_input("Day? \n> "))
 
-    dayListBuild = [[0,0,0]]
+    dayListBuild = [[0,0,1]]
     
     for year in range(start_year, end_year+1):
         
         for month in range(start_month, end_month+1):
+            
+            a = 0
             
             day_count = 31
             
@@ -52,20 +54,24 @@ def dayListBuild():
                 else:
                     print "Yep,", year, "is a leap year. Hooray for an extra day!"
                     day_count = 29
-
                 
             for day in range(start_day, day_count + 1):
+
                 dayListBuild.append([year, month, day])
                 # Need to figure out how to write this. 
-                if dayListBuild[a] % 7 == 0:
+                if len(dayListBuild) > 6 and dayListBuild[a][2] == 1:
+                    print "LOOK RIGHT HERE!!"
+                    a += 7
+                    print a
+                    print day
                     sunday_count += 1
+                    print sunday_count
 
-    print dayListBuild
     print len(dayListBuild)/7
     
-    base_day = dayListBuild[7][2]
-    print base_day
-    
+    print sunday_count
 
 dayListBuild()
 
+# tried 100, 1200 
+# answer should be right around 200
