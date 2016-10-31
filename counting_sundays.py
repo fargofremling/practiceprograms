@@ -31,13 +31,15 @@ def dayListBuild():
     end_month = int(raw_input("Month? \n> "))
     end_day = int(raw_input("Day? \n> "))
 
-    dayListBuild = [[0,0,1]]
+    dayListBuild = [[0,0,0]]
+    
+    a = 0
     
     for year in range(start_year, end_year+1):
         
         for month in range(start_month, end_month+1):
             
-            a = 0
+            a = a + 6
             
             day_count = 31
             
@@ -61,12 +63,13 @@ def dayListBuild():
                 # Need to figure out how to write this. 
                 if len(dayListBuild) > 6 and dayListBuild[a][2] == 1:
                     print "LOOK RIGHT HERE!!"
-                    a += 7
+                    print dayListBuild[a][2] 
                     print a
                     print day
                     sunday_count += 1
                     print sunday_count
-
+                else:
+                    continue   
     print len(dayListBuild)/7
     
     print sunday_count
