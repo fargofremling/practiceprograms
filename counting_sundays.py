@@ -39,7 +39,7 @@ def dayListBuild():
         
         for month in range(start_month, end_month+1):
             
-            a = a + 6
+            a = a + 7
             
             day_count = 31
             
@@ -64,10 +64,12 @@ def dayListBuild():
                 if len(dayListBuild) > 6 and dayListBuild[a][2] == 1:
                     print "LOOK RIGHT HERE!!"
                     print dayListBuild[a][2] 
-                    print a
-                    print day
+                    print "This is a =", a
+                    print "This is the day =", day
                     sunday_count += 1
                     print sunday_count
+                    break
+                    
                 else:
                     continue   
     print len(dayListBuild)/7
@@ -76,5 +78,5 @@ def dayListBuild():
 
 dayListBuild()
 
-# tried 100, 1200 
+# tried 100, 1200, 1244, 40
 # answer should be right around 200
