@@ -70,3 +70,5 @@ def dayListBuild():
     print "Number of Sunday's that land on the first of the month: ", sunday_count
 
 dayListBuild()
+
+# Answer: 171
