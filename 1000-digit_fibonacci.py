@@ -18,9 +18,6 @@
 # 
 # What is the index of the first term in the Fibonacci sequence to contain 1000 digits?
 
-#
-# 0, 1, 1, 2, 3, 5, 8, 13, 21, 34, 55
-
 print ("The Fibonacci Sequence is a series of numbers in which each term in the sequence"
 " (Fibonacci number) is the sum of the two preceding numbers.")
 
@@ -61,5 +58,3 @@ def the_sequence():
                 return
             
 the_sequence()
-
-
