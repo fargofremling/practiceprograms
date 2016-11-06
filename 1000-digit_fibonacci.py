@@ -52,9 +52,9 @@ def the_sequence():
             fib_nums.append(term)
             term += 1
         
-        for str(x) in fib_nums:
-            if len(x) == 1000:
-                print x
-                return
+#         for str(x) in fib_nums:
+#             if len(x) == 1000:
+#                 print x
+#                 return
             
 the_sequence()
