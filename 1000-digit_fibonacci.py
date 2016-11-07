@@ -43,14 +43,34 @@ def the_sequence():
         if term % 2:
             f = f + g    
             print f
+            len_f = str(f)
+            if len_f == 1000:
+                print "DONE"
+                print "Answer:", fib_nums[-1]
+
             fib_nums.append(term)
             term += 1
             
         else:
             g = g + f
             print g
+            len_g = str(f)
+            if len(len_g) == 1000:
+                print "DONE"
+                print "Answer:", fib_nums[-1]
+                return
+#             else:
+#                 continue
             fib_nums.append(term)
             term += 1
+            
+#         if len(len_f) == 1000 or len(len_g) == 1000:
+#             print f
+#             print g
+#             return
+#         else:
+#             continue
+
         
 #         for str(x) in fib_nums:
 #             if len(x) == 1000:
