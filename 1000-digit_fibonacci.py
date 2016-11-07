@@ -59,22 +59,12 @@ def the_sequence():
                 print "DONE"
                 print "Answer:", fib_nums[-1]
                 return
-#             else:
-#                 continue
             fib_nums.append(term)
             term += 1
-            
-#         if len(len_f) == 1000 or len(len_g) == 1000:
-#             print f
-#             print g
-#             return
-#         else:
-#             continue
 
-        
-#         for str(x) in fib_nums:
-#             if len(x) == 1000:
-#                 print x
-#                 return
-            
 the_sequence()
+
+print fib_nums[0]
+print fib_nums[1]
+
+# Answer: 4782
