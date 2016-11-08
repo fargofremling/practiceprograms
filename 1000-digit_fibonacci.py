@@ -21,9 +21,9 @@
 print ("The Fibonacci Sequence is a series of numbers in which each term in the sequence"
 " (Fibonacci number) is the sum of the two preceding numbers.")
 
-print "To what term would you like to see the sequence calculated?"
+print "Let's figure out what term of the Fibonacci sequence contains 1000 digits?"
 
-t = raw_input("> ")
+# t = raw_input("> ")
 
 fib_nums = []
 
@@ -31,6 +31,7 @@ def the_sequence():
 
     term = 0
     
+    len_f = "0"
     # establishes first term in the sequence
     f = 0
     print f
@@ -38,7 +39,7 @@ def the_sequence():
     # establishes second term in the sequence
     g = 1
     
-    while term < (int(t) - 1):
+    while len(len_f) < 1001:
     
         if term % 2:
             f = f + g    
