@@ -47,10 +47,10 @@ def the_sequence():
             len_f = str(f)
             if len_f == 1000:
                 print "DONE"
-                print "Answer:", fib_nums[-1]
+                print "Answer:", len(fib_nums)
                 return
                 
-            fib_nums.append(term)
+            fib_nums.append(f)
             term += 1
             
         else:
@@ -59,14 +59,12 @@ def the_sequence():
             len_g = str(f)
             if len(len_g) == 1000:
                 print "DONE"
-                print "Answer:", fib_nums[-1]
+                print "Answer:", len(fib_nums)
                 return
                 
-            fib_nums.append(term)
+            fib_nums.append(g)
             term += 1
 
 the_sequence()
 
 # Answer: 4782
-
-# Turm back time test, part 2 - This commit is actually happening on 10/10
