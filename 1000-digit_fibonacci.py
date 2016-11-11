@@ -48,7 +48,8 @@ def the_sequence():
             if len_f == 1000:
                 print "DONE"
                 print "Answer:", fib_nums[-1]
-
+                return
+                
             fib_nums.append(term)
             term += 1
             
@@ -60,12 +61,10 @@ def the_sequence():
                 print "DONE"
                 print "Answer:", fib_nums[-1]
                 return
+                
             fib_nums.append(term)
             term += 1
 
 the_sequence()
-
-print fib_nums[0]
-print fib_nums[1]
 
 # Answer: 4782
