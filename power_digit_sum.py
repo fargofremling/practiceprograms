@@ -5,9 +5,9 @@
 
 exponent = 2**1000
 
-split = str(exponent)
+# split = str(exponent)
 
-big_number = list(split)
+big_number = list(exponent)
 
 print big_number
 
