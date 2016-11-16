@@ -5,15 +5,18 @@
 
 exponent = 2**1000
 
-# split = str(exponent)
+print "2 ^ 1000 =", exponent
 
-big_number = list(exponent)
+split = str(exponent)
+
+big_number = list(split)
 
 print big_number
 
-def add(x,y): 
-    return x+y
+big_number = [ int(x) for x in big_number ]
+
+def add(x,y): return x+y
 
 answer = reduce(add, big_number)
 
-print answer
+print "Answer:", answer
