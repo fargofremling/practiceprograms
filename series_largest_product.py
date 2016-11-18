@@ -45,21 +45,3 @@ sums.sort()
 print sums
 
 # Answer: 23514624000
-
-# *Code Not Needed*
- 
-# if 0 in the_numbers:
-#     print "here"
-# else:
-#     print "nope"
-
-## prints the index of the first 0 only
-# print the_numbers.index(0)
-
-## prints the indices of all the zeros
-# print [i for i in range(len(the_numbers)) if the_numbers[i]==0]
-
-# for n in xrange(0,988):
-#     for x in the_numbers[n:n+12]:
-#         product *= x
-#         print product
